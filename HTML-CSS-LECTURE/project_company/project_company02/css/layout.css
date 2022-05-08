@@ -60,12 +60,34 @@ a {
   font-weight: 400;
   color: #222;
   padding: 0 40px;
+  display: inline-block;
 }
+#gnb .list .depth01:hover {
+  color: #007aff;
+}
+#gnb .list .depth01:after {
+  content: "";
+  height: 3px;
+  position: relative;
+  top: 34px;
+  z-index: 1;
+  display: block;
+  background-color: #007aff;
+  transform: scaleX(0);
+  transition: transform 0.25s ease-in-out;
+}
+#gnb .list .depth01:hover:after {
+  transform: scaleX(1);
+}
+
 #gnb .list .depth02 {
   font-size: 16px;
   color: #444;
   line-height: 2;
   margin-top: 70px;
+}
+#gnb .list .depth02 > li:hover {
+  color: #007aff;
 }
 #headerRight {
   position: absolute;
