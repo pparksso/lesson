@@ -1,0 +1,15 @@
+#mainVisual .shipImg {
+  position: absolute;
+  bottom: 46px;
+  left: 600px;
+}
+#mainVisual .cloud01 {
+  position: absolute;
+  bottom: 400px;
+  left: 50px;
+}
+#mainVisual .cloud02 {
+  position: absolute;
+  bottom: 400px;
+  right: 670px;
+}

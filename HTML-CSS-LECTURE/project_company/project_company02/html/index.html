@@ -13,10 +13,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
     <!-- css -->
+    <link rel="stylesheet" href="../css/swiper.min.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/swiper.min.css" />
     <!-- js -->
     <script src="../js/swiper-bundle.min.js"></script>
   </head>
@@ -86,7 +86,7 @@
           <ul class="selecteLanguage">
             <li>
               <a href="">KOR</a>
-              <ul id="subLanguage">
+              <ul class="subLanguage">
                 <li><a href="">KOR</a></li>
                 <li><a href="">ENG</a></li>
                 <li><a href="">CHN</a></li>
@@ -96,27 +96,32 @@
         </div>
       </div>
     </header>
-    <!-- <section id="mainVisual">
-      <ul>
-        <li>미래 에너지에 <br />답하다</li>
+    <section id="mainVisual">
+      <ul class=:"">
         <li>
-          <h2>
+          <h3 class="">미래 에너지에 <br />답하다</h3>
+        </li>
+        <li>
+          <h2 class="subTitle">
             Join Eco, <br />
             Be Energy,
           </h2>
-          <p>생태계의 일원이 되어 깨끗한 에너지를 공급하고</p>
+          <p class="ex">생태계의 일원이 되어 깨끗한 에너지를 공급하고</p>
         </li>
         <li>
-          <h2>
+          <h2 class="subTitle">
             and <br />
             Make Origins
           </h2>
-          <p>끊임없이 변화하며 항상 새로운 기원을 만들어 가는 Carbon-Neutral Energy Optimizer로 도약할 것입니다.</p>
+          <p class="ex">끊임없이 변화하며 항상 새로운 기원을 만들어 가는 Carbon-Neutral Energy Optimizer로 도약할 것입니다.</p>
         </li>
       </ul>
-    </section> -->
+      <div class="cloud01"><img src="../images/main/img_cloud.png" alt="" /></div>
+      <div class="cloud02"><img src="../images/main/img_cloud02.png" alt="" /></div>
+      <div class="shipImg"><img src="../images/main/img_ship.png" alt="" /></div>
+    </section>
     <script>
-      new Swiper("#main");
+      new Swiper(".slogan");
     </script>
   </body>
 </html>
