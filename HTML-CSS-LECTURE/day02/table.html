@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table</title>
+  </head>
+  <body>
+    <!-- td(table data)는 표의 셀을 정의, th(table head)는 셀의 헤더 -->
+    <!-- scope속성은  -->
+    <table border="1">
+      <caption>
+        유한양행
+      </caption>
+      <colgroup>
+      <col width="10%" />
+      <col width="40%" />
+      <col width="10%" />
+      <col width="40%" />
+    </colgroup>
+      <!-- <thead></thead> -->
+      <tbody>       
+        <tr>
+          <th scope="row">기업명</th>
+          <td>(주)유한양행</td>
+          <th scope="row">설립</th>
+          <td>1926.06.20</td>
+        </tr>
+        <tr>
+          <th scope="row">대표이사</th>
+          <td>사장 조욱제</td>
+          <th scope="row">상장일</th>
+          <td>1962.11.01</td>
+        </tr>
+        <tr>
+          <th scope="row">주소</th>
+          <td colspan="3">서울특별시 동작구 노량진로 74</td>
+        </tr>
+        <tr>
+          <th scope="row">전화번호</th>
+          <td colspan="3">02-828-0181</td>
+        </tr>        
+    </table>
+  </tbody>
+
+
+  <hr>
+  <table border="1" width="800px">
+    <caption>team</caption>
+    <thead>
+      <tr>
+        <th scope="col">name</th>
+        <th scope="col">subject</th>
+        <th scope="col">marks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td rowspan="2">Hillary</td>
+        <td>advanced web</td>
+        <td>75</td>
+      </tr>
+      <tr>
+        <td>operating system</td>
+        <td>60</td>
+      </tr>
+      <tr>
+        <td rowspan="2">lary</td>
+        <td>advanced web</td>
+        <td>80</td>  
+      </tr>
+      <tr>
+        <td>operating system</td>
+        <td>75</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td colspan="2">total awerage:72.5</td>
+      </tr>
+    </tfoot>
+  </table>
+</html>

@@ -1,0 +1,147 @@
+#mainVisual {
+  margin-top: 101px;
+  position: relative;
+}
+#mainVisual ul li {
+  height: calc(100vh - 100px);
+  color: #fff;
+}
+#mainVisual ul .slide01 {
+  background-image: url(../images/main/main01.jpg);
+}
+#mainVisual ul .slide02 {
+  background-image: url(../images/main/main02.jpg);
+}
+#mainVisual ul .slide03 {
+  background-image: url(../images/main/main03.jpg);
+}
+#mainVisual ul li:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#mainVisual ul li .txtBox {
+  width: 1280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+/* #mainVisual ul li .innerTxt {
+  display: flex;
+} */
+#mainVisual ul li .txtBox .headTxt {
+  font-size: 24px;
+  border-bottom: 1px solid #fff;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+#mainVisual ul li .txtBox h2 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 20px 0;
+}
+#mainVisual ul li .txtBox .descTxt {
+  font-size: 18px;
+}
+
+#mainVisual ul li .txtBox a {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 90px;
+  transition: all 0.25s ease;
+}
+#mainVisual ul li .txtBox a:hover {
+  background-color: #fff;
+  color: #000;
+}
+#mainVisual button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background: none;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  transition: background-color, 500ms;
+}
+#mainVisual button:hover {
+  background-color: rgb(176, 85, 255);
+}
+#mainVisual button .material-icons {
+  font-size: 40px;
+}
+#mainVisual .next {
+  right: 50px;
+}
+#mainVisual .prev {
+  left: 50px;
+}
+#petra .container {
+  width: 1400px;
+  height: 100vh;
+  margin: 200px auto 0 auto;
+  color: #3d3939;
+}
+#petra .container .slogan h2 {
+  font-size: 72px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+#petra .container .slogan p {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+#petra .container ul {
+  display: flex;
+  justify-content: space-around;
+}
+#petra .container ul li {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  width: 327px;
+  height: 449px;
+  box-shadow: -0.5em 0 0.4em #ccc;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  position: relative;
+  border-radius: 50px 0 50px 0;
+}
+#petra .container ul li:hover {
+  background-color: #026bfa;
+  transition: background-color 0.5s ease-in-out;
+  color: #fff;
+}
+#petra .container ul li img {
+  position: relative;
+  bottom: 50px;
+}
+#petra .container ul li h3 {
+  font-size: 1.5em;
+  font-weight: 500;
+  margin: 0 0 20px 0;
+}
+#petra .container ul li p {
+  line-height: 1.7;
+}
+/* 10px 5px 5px red; */

@@ -1,0 +1,104 @@
+body {
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+#header:hover {
+  height: 250px;
+}
+#header {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  overflow: hidden;
+  z-index: 99;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  transition: height 400ms cubic-bezier(1, -0.01, 0, 0.99);
+}
+#header:after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 100px;
+  background-color: #ccc;
+}
+#header .container {
+  width: 1500px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+#header .container #logo {
+  display: flex;
+  align-self: center;
+  padding-left: 50px;
+}
+#gnb {
+  width: 1500px;
+  display: flex;
+  justify-content: center;
+}
+#header h2 {
+  display: none;
+}
+#gnb .list {
+  width: 1000px;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40px;
+  padding-right: 100px;
+}
+#gnb .list .depth01 {
+  font-size: 21px;
+  font-weight: 500;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 1;
+  transition-property: color;
+  transition-duration: 500ms;
+}
+#gnb .list .depth01:hover {
+  color: #f00;
+}
+
+#gnb .list .depth01:after {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: #f00;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transition: transform 500ms ease-in-out;
+}
+#gnb .list .depth01:hover:after {
+  transform: scaleX(1);
+}
+#gnb .list .depth02 {
+  padding-top: 50px;
+  margin-top: 30px;
+  color: #666;
+}
+#gnb .list .depth02 li:before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  margin-bottom: 4px;
+  margin-right: 4px;
+  background-color: #666;
+}
+#gnb .list .depth02 li {
+  padding-bottom: 10px;
+}

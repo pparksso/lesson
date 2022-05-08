@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>form태그에 대해 알아봅시다.</h1>
+    <p>꼭 알아야됨</p>
+    <!-- input 태그는 inline태그이다!!!
+      placeholder 속성은 칸 안에 정보를 알려줌
+      number type은 숫자 입력 가능, 조절키 있음(step속성은 단위점프 가능하게함)
+      required 속성은 값이 입력이 안되면 안넘어가게함
+      name 속성 값으로 서버에서 인풋을 받음 -->
+    <!-- form태그의 action속성은 전송위치, method속성은 전송 방법(get-주소창에 정보 다 나옴,post) -->
+    <!-- radio는 같은 name이면 중복 체크 안됨!!!,label for값과 radio의 id값을 맞춰주면 글자만 찍어도 체크됨!
+         radio,check box같이 체크한 것이 날아갈 때는 입력된 값이 없기 때문에 태그 안에 value 속성을 넣어줘야됨!! -->
+    <!--텍스트박스 안에 value를 쓰면 값이 들어가있고, readonly속성을 쓰면 수정 불가  -->
+    <form action="insert.html" method="get">
+      <div>
+        <input
+          type="text"
+          placeholder="아이디를 입력하세요."
+          maxlength="10"
+          name="id"
+          id=""
+          value="park"
+          readonly
+        />
+      </div>
+      <div>
+        <input
+          type="password"
+          placeholder="패스워드를 입력하세요."
+          name="password"
+        />
+      </div>
+      <div>
+        <input
+          type="number"
+          placeholder="입찰가격을 입력하세요."
+          step="1000"
+          name="price"
+        />
+      </div>
+      <div><input type="date" placeholder="날짜를 고르세요" name="date" /></div>
+      <div>
+        <input
+          type="email"
+          placeholder="이메일을 입력하세요."
+          required
+          name="email"
+        />
+      </div>
+      <p>성별</p>
+      <input type="radio" name="gender" id="female" value="female" checked />
+      <label for="female">여자</label>
+      <input type="radio" name="gender" id="male" value="male" />
+      <label for="male">남자</label>
+      <input type="file" name="profile" id="" />
+      <div><button>전송</button></div>
+      <div>
+        <!-- 체크박스 여러개 만들 때는 하단사용!! label의 for 지워야되는거 유의!! -->
+        <p>관심분야</p>
+        <!-- <input type="checkbox" name="" id="HTML" /><label for="HTML">HTML</label> -->
+        <!-- checked속성은 체크박스, 라디오에서 사용 가능 -->
+        <label>
+          <span>html</span>
+          <input type="checkbox" name="favorite" id="" value="html" checked />
+        </label>
+        <label>
+          <span>CSS</span>
+          <input type="checkbox" name="favorite" id="" value="CSS" />
+        </label>
+        <label>
+          <span>JS</span>
+          <input type="checkbox" name="favorite" id="" value="JS" />
+        </label>
+        <label>
+          <span>Node</span>
+          <input type="checkbox" name="favorite" id="" value="Node" />
+        </label>
+        <!-- select 태그는 option만 넣을 수 있음!!! -->
+        <select name="grade" id="">
+          <option value="">학력을 선택해주세요.</option>
+          <option value="1">초졸</option>
+          <option value="2">중졸</option>
+          <option value="3">고졸</option>
+          <option value="4">대졸</option>
+        </select>
+        <textarea name="contents" id="" cols="30" rows="10"></textarea>
+      </div>
+    </form>
+  </body>
+</html>

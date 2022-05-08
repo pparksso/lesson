@@ -1,0 +1,161 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  background-color: #333;
+  color: #fff;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+#header {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+}
+#header:hover {
+  height: 800px;
+  background-color: #fff;
+  color: #000;
+  transition: 300ms ease;
+}
+#header:hover .logoDefault {
+  display: none;
+}
+#header:hover .logoChange {
+  display: block;
+}
+#header:hover:after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 100px;
+  background-color: #ddd;
+  display: block;
+}
+
+#header .container {
+  display: flex;
+  position: relative;
+  width: 1825px;
+  height: 100px;
+  justify-content: center;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+#header #logo .logoDefault {
+  position: absolute;
+  left: 0;
+}
+#header #logo .logoChange {
+  position: absolute;
+  left: 0;
+  display: none;
+}
+#header .container h2 {
+  display: none;
+}
+
+#gnb .list {
+  display: flex;
+}
+#gnb .depth01 {
+  font-size: 18px;
+  margin-right: 100px;
+}
+#gnb .top1:hover {
+  color: rgb(255, 176, 86);
+  transition: 300ms;
+}
+#gnb .top2:hover {
+  color: rgb(255, 176, 86);
+}
+#gnb .top3:hover {
+  color: rgb(255, 176, 86);
+  transition: 300ms;
+}
+#gnb .depth02 {
+  margin-top: 80px;
+  font-size: 17px;
+}
+#gnb .depth02 > li {
+  padding-bottom: 15px;
+}
+#gnb .depth03 {
+  margin-top: 15px;
+  font-size: 14px;
+}
+#gnb .depth03 > li {
+  padding-bottom: 15px;
+}
+#siteMap {
+  position: absolute;
+  right: 0;
+  display: flex;
+}
+#siteMap .shipping {
+  display: inline-block;
+  text-align: center;
+  line-height: 31px;
+  width: 127px;
+  height: 31px;
+  border: 1px solid #f5821f;
+  background-color: #f5821f;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 700;
+  position: absolute;
+  right: 200px;
+  margin-right: 30px;
+  margin-top: -6px;
+}
+#siteMap .material-icons {
+  font-size: 16px;
+}
+#siteMap .familySite {
+  position: absolute;
+  right: 100px;
+  display: flex;
+  font-size: 14px;
+}
+#siteMap .language {
+  font-size: 14px;
+  position: absolute;
+  right: 40px;
+}
+#siteMap .language::after {
+  content: "";
+  background-image: url(../images/common/icon_arrow_dropDown.png);
+  width: 8px;
+  height: 4px;
+  position: absolute;
+  left: 38px;
+  top: 6px;
+}
+#siteMap .language:hover::after {
+  transform: rotate(180deg);
+}
+#siteMap .language .subLanguage {
+  font-size: 14px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  color: #000;
+  padding: 8px 13px;
+  position: absolute;
+  top: 23px;
+  right: -15px;
+}
+#siteMap .language .subLanguage > li {
+  padding-bottom: 10px;
+}
+#siteMap .language .subLanguage > li:hover {
+  background-color: #ddd;
+  transition: all 300ms;
+}
+
+/* 1. 로고 안바뀜
+2. depth01들 클래스 다르게 줘도 첫번째것만 변함 
+3. shipping 세로 가운데 정렬
+4. sub Language 색으로 꽉 채우고, 보더바텀 생성
+5. 헤드 바텀 라인 제일 밑으로 보내기*/

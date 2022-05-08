@@ -1,0 +1,50 @@
+body {
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+}
+a {
+  text-decoration: none;
+  font-size: 14px;
+  color: inherit;
+}
+#header {
+}
+#header h2 {
+  display: none;
+}
+#header .container {
+  width: 1800px;
+  height: 50px;
+  margin: 0 auto;
+  padding-top: 25px;
+  display: flex;
+  position: relative;
+}
+#header #logo {
+  position: absolute;
+  left: 0;
+}
+#header .container .list {
+  display: flex;
+  color: #333;
+  margin-left: 100px;
+  text-align: left;
+}
+#header .container .depth01 {
+  padding: 0 30px;
+}
+#gnb .list > li:hover .depth02 {
+  display: block;
+}
+#header .container .depth02 {
+  margin: 25px 0 0 0;
+  padding: 5px 10px 5px 5px;
+  border: 1px solid #ddd;
+  display: none;
+}
+#header .container .depth02 li {
+  padding-bottom: 10px;
+}
+#header .headerSelector {
+  position: absolute;
+  right: 0;
+}

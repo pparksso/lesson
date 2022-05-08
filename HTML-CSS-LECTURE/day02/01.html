@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <title>웹브라우저 탭 제목을 쓰는 곳</title>
+    <style>
+      body {
+        font-family: 'Hi Melody', cursive;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- p tag는 글자 블럭을 형성한다. 다른 블럭 태그를 쓸 수 없다(ex 안에 div 나 p 같은거 못넣음)
+    줄바꿈 하고 싶으면 줄바꿈 하고싶은 곳에 br태그(단독태그) 쓰면 됨
+    한 칸 이상 공백을 사용할 수 없기 때문에 그 이상 공백을 넣고 싶은 경우 &nbsp;사용하면됨!
+    ex L &nbsp;&nbsp;&nbsp;&nbsp;orem -->
+
+    <!-- &lt;p&gt;태그는 글자 블럭을 형성한다.&#128152;</p> -->
+
+    <!-- span(글자를 하나씩 나타나게 하고싶을 때 사용하기도 함), strong, em, q(인용), b, i(아이콘), 
+      del(취소선), sub(아래첨삭), sup(위 첨삭) -->
+    <div>
+      <h3>
+        서시
+        <span class="material-icons">
+          favorite_border
+        </span>
+      </h3>
+      <p>
+        죽는 날까지 하늘을 우러러
+        <br />
+        한 점 부끄럼이 없기를
+        <br />
+        잎새에 이는 바람에도
+        <br />
+        나는 괴로워했다.
+        <br />
+        <strong>별</strong>
+        을 노래하는 마음으로
+        <br />
+        모든 죽어가는 것을 사랑해야지
+        <br />
+        그리고 나한테 주어진 길을
+        <br />
+        걸어가야겠다.
+      </p>
+      <p>
+        오늘 밤에도
+        <strong>별</strong>
+        이 바람에 스치운다.
+      </p>
+    </div>
+    <div>
+      <h3>프로야구 순위</h3>
+      <ol>
+        <li>SK 랜더스</li>
+        <li>LG 트윈스</li>
+        <li>두산 베어스</li>
+        <li>키움 히어로즈</li>
+      </ol>
+    </div>
+    <div>
+      <!-- definition list 정의형 목록/ dt는 정의할 제목 / dd는 정의할 내용(자동으로 들여쓰기하여 나타남) -->
+      <dl>
+        <dt>지은이 :</dt>
+        <dd>장성호</dd>
+        <dt>사과 :</dt>
+        <dd>apple</dd>
+      </dl>
+    </div>
+    <div>
+      <p>
+        정상가 :
+        <del>30000원</del>
+      </p>
+      <p>세일가 : 24000원</p>
+    </div>
+    <div>
+      <p>
+        1py : 3.3m
+        <sup>2</sup>
+      </p>
+      <p>
+        1py : 3.3m
+        <sub>2</sub>
+      </p>
+    </div>
+    <!-- blockquote(인용해올 때 사용, cite에는 인용해온 주소 넣어야됨!!), 한 줄 짜리 간단한 인용은 q태그 사용
+    abbr은 준말, 머리글자를 나타냄 -->
+    <div>
+      <h3>인용문</h3>
+      <p>쌍용자동차의 전설의 부활한다.</p>
+      <blockquote
+        cite="https://www.sedaily.com/NewsView/264VQ8MT1Z?OutLink=nstand"
+      >
+        쌍용차가 에디슨모터스컨소시엄의 인수 무산으로 다시 새주인 찾기에 나선
+        가운데 출시를 앞둔 J100의 역할이 주목받고 있다. J100은 지난해 6월
+        디자인이 공개되자마자 호평이 쇄도했다. 네티즌들은 "중볼리, 대볼리(티볼리
+        디자인과 유사한 뷰티풀 코란도, G4 렉스턴을 이르는 말)만 내놓더니 드디어
+        쌍용이 정신 차렸다", "저대로만 나오면 산다", "쌍용답다" 등 극찬을
+        쏟아냈다.
+      </blockquote>
+      <p>
+        짧은 인용문 :
+        <q>
+          지난 1993년 출시돼 2000년대 중반까지 중형 스포츠유틸리티차량(SUV)
+          시장을 평정했던 ‘무쏘’의 후속 모델 'J100'(프로젝트명) 얘기다.
+        </q>
+      </p>
+      <p><abbr title="world wide web">W3C</abbr></p>
+      <address>
+        오시는 길 : 서울시 영등포구 당산동 113길
+      </address>
+    </div>
+  </body>
+</html>
