@@ -1,0 +1,96 @@
+body {
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  color: #111;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+#header::after {
+  content: "";
+  position: absolute;
+  top: 90px;
+  display: block;
+  height: 1px;
+  width: 100%;
+  z-index: 99;
+  background-color: #fff;
+}
+#header .container {
+  display: flex;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+}
+#header #logo {
+  position: absolute;
+  left: 5%;
+}
+#gnb {
+  margin: 0 auto;
+}
+#gnb .list {
+  display: flex;
+  text-align: center;
+}
+#gnb .list .depth01 {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 90px;
+  font-weight: 500;
+  /* margin-bottom: 10px; */
+}
+#gnb .list > li:hover .depth01 {
+  background-color: rgb(200, 61, 61);
+}
+#gnb .list .depth01::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 100%;
+  position: relative;
+  top: 39px;
+  left: px;
+  right: px;
+  z-index: 100;
+  background-color: #fff;
+}
+#gnb .list > li:hover .depth02 {
+  display: block;
+  background-color: rgb(200, 61, 61);
+  border-radius: 0 0 10px 10px;
+  transition: background-color 0.9ms ease-in-out;
+}
+
+#gnb .list .depth02 {
+  display: none;
+  padding-top: 20px;
+}
+#gnb .list .depth02 li a {
+  padding: 15px 0;
+  display: block;
+}
+#gnb .list .depth02 > li:hover {
+  background-color: rgb(122, 23, 23);
+}
+#header .container .online {
+  position: absolute;
+  display: block;
+  padding: 15px 30px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  right: 5%;
+  top: 20px;
+  border-radius: 30px;
+}
+#header .container .online:hover {
+  background-color: rgb(122, 23, 23);
+  transition: background-color 0.5s ease-in-out;
+  border: 1px solid rgb(122, 23, 23);
+}

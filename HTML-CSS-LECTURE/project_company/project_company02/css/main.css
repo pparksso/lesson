@@ -13,3 +13,31 @@
   bottom: 400px;
   right: 670px;
 }
+#mainVisual .mainTitle {
+  color: #008ed0;
+  font-size: 30px;
+  font-weight: 500;
+}
+#mainVisual .subTitle {
+  font-size: 120px;
+  font-weight: 900;
+  color: #008ed0;
+}
+#mainVisual .ex {
+  font-size: 20px;
+  color: #008ed0;
+}
+#mainVisual .swiper {
+  width: 1000px;
+  height: 500px;
+  position: absolute;
+  bottom: 200px;
+  left: 480px;
+  text-align: center;
+}
+#mainVisual .ex {
+  line-height: 4;
+}
+#mainVisual .textBox {
+  align-items: center;
+}

@@ -1,6 +1,33 @@
 /* background-size:cover - 가로세로 종횡비 유지하면서 자르면서 가득 채움
  background-size:contain - 가로세로 종횡비 유지하면서 짤리지않고 가득 채움(그래서 반복되고 그럼)*/
 /* 상하 마진이 겹치면 큰 것만 먹는다! 이것을 마진병합 현상이라고 함!!! */
+/* common */
+.section .titleBox {
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+.section .titleBox h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.section .titleBox p {
+  line-height: 1.5;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.section {
+  padding: 100px 0;
+}
+.btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+/* common end */
 #mainVisual {
   overflow: hidden;
 }
@@ -87,10 +114,8 @@
   animation-iteration-count: infinite;
 }
 /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-
-#quickMenu .container {
-  width: 1200px;
-  margin: 0 auto;
+#quickMenu {
+  padding: 0;
 }
 #quickMenu .container ul {
   display: flex;
@@ -148,25 +173,12 @@
   100% {
     transform: translateY(0);
   }
+  /* quickMenu end */
 }
 #business {
   background-color: #ccc;
   background-image: url(../images/main/bgBusiness.jpg);
-  padding: 100px 0;
   margin-top: 100px;
-}
-#business .titleBox {
-  text-align: center;
-  margin-bottom: 50px;
-}
-#business .titleBox h2 {
-  font-size: 48px;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-#business .container {
-  width: 1200px;
-  margin: 0 auto;
 }
 #business .container ul {
   display: flex;
@@ -215,6 +227,92 @@
   font-weight: 700;
   margin-bottom: 20px;
 }
+/* business end */
+#news .list {
+  display: flex;
+  justify-content: space-between;
+}
+#news .list li {
+  width: 31.33%;
+  border: 1px solid #999;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+#news .list li:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+#news .list li::after {
+  content: "";
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 0px #9c0810;
+  transition: box-shadow 0.15s ease-in-out;
+}
+#news .list li:hover::after {
+  box-shadow: inset 0 0 0 4px #9c0810;
+}
+
+#news .list li img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+}
+#news .list .desc {
+  padding: 30px;
+}
+#news .list .desc h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  /* 글자 한 줄로만 나오게 할 때 사용하는 세트 코드들 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#news .list .desc .text {
+  line-height: 1.5;
+  height: 4.5em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: 30px;
+}
+#news .list .desc .date {
+  color: #999;
+}
+/* news end */
+#customer {
+  background-image: url(../images/main/bgCustomer.jpg);
+  margin-bottom: 0;
+}
+#customer .titleBox h2::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 1px;
+  background-color: #fff;
+  margin: 30px auto;
+}
+#customer .titleBox {
+  color: #fff;
+}
+.btns .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #9c0810;
+  color: #fff;
+  padding: 20px 40px;
+  border-radius: 100px;
+  margin: 0 5px;
+}
+/* customer end */
 
 /* @keyframes mouseAnimation {
   0% {

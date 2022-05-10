@@ -38,7 +38,7 @@ a {
 #header .container {
   display: flex;
   position: relative;
-  width: 1825px;
+  width: 90%;
   height: 100px;
   justify-content: center;
   margin: 0 auto;
@@ -64,14 +64,7 @@ a {
   font-size: 18px;
   margin-right: 100px;
 }
-#gnb .top1:hover {
-  color: rgb(255, 176, 86);
-  transition: 300ms;
-}
-#gnb .top2:hover {
-  color: rgb(255, 176, 86);
-}
-#gnb .top3:hover {
+#gnb .depth01:hover {
   color: rgb(255, 176, 86);
   transition: 300ms;
 }
@@ -79,12 +72,20 @@ a {
   margin-top: 80px;
   font-size: 17px;
 }
+#gnb .depth02 > li:hover > a {
+  color: rgb(255, 176, 86);
+  transition: 300ms;
+}
 #gnb .depth02 > li {
   padding-bottom: 15px;
 }
 #gnb .depth03 {
   margin-top: 15px;
   font-size: 14px;
+}
+#gnb .depth03 > li:hover {
+  color: rgb(255, 176, 86);
+  transition: 300ms;
 }
 #gnb .depth03 > li {
   padding-bottom: 15px;
@@ -124,16 +125,16 @@ a {
   position: absolute;
   right: 40px;
 }
-#siteMap .language::after {
-  content: "";
+#siteMap .language > li::after {
+  /* content: "";
   background-image: url(../images/common/icon_arrow_dropDown.png);
   width: 8px;
   height: 4px;
   position: absolute;
   left: 38px;
-  top: 6px;
+  top: 6px; */
 }
-#siteMap .language:hover::after {
+#siteMap .language > li:visited:after {
   transform: rotate(180deg);
 }
 #siteMap .language .subLanguage {

@@ -1,0 +1,36 @@
+$main-color: #bf0c14;
+#header {
+  position: absolute;
+  #gnb {
+    .list {
+      display: flex;
+      > li {
+        &:hover {
+          .depth01 {
+            color: $main-color;
+          }
+        }
+        .depth01 {
+          font-size: 20px;
+          display: flex;
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+#footer {
+  background-color: #333;
+  .utilMenu {
+    border-bottom: 1px solid darken($color: #333, $amount: 10);
+    ul {
+      display: flex;
+      justify-content: center;
+      li {
+        position: relative;
+        top: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+#header {
+  position: absolute;
+}
+
+#header #gnb .list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#header #gnb .list > li:hover .depth01 {
+  color: #bf0c14;
+}
+
+#header #gnb .list > li .depth01 {
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #bf0c14;
+}
+
+#footer {
+  background-color: #333;
+}
+
+#footer .utilMenu {
+  border-bottom: 1px solid #1a1a1a;
+}
+
+#footer .utilMenu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#footer .utilMenu ul li {
+  position: relative;
+}
+/*# sourceMappingURL=layout.css.map */
