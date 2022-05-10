@@ -1,0 +1,60 @@
+@import "vars";
+@import "mixin";
+
+#mainVisual {
+  overflow: hidden;
+  ul {
+    li {
+      height: 100vh;
+      background: {
+        size: cover;
+        repeat: no-repeat;
+        position: 50% 50%;
+      }
+      &.visual01 {
+        background-image: url(../images/main/mainVisual01.jpg);
+      }
+      &.visual02 {
+        background-image: url(../images/main/mainVisual02.jpg);
+      }
+      &.visual03 {
+        background-image: url(../images/main/mainVisual03.jpg);
+      }
+    }
+  }
+  .slogan {
+    @include absCenter;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    h2 {
+      font-size: $font-large;
+      font-weight: 700;
+      margin-bottom: 40px;
+      user-select: none;
+    }
+    p {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+  }
+  button {
+    @include absCenter(false, true);
+    z-index: 3;
+    width: 80px;
+    height: 80px;
+    border: #fff;
+    background: none;
+    .material-icons {
+      font-size: $font-large;
+      color: #fff;
+      vertical-align: top;
+    }
+    &.prev {
+      left: 50px;
+    }
+    &.next {
+      right: 50px;
+    }
+  }
+}

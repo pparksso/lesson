@@ -1,0 +1,65 @@
+// 나타나지 않는주석
+/*나타나는 주석*/
+
+// 중첩, 변수, 믹스인 세가지만 제대로 알면 됨!!!!
+
+// 변수 지정하는 법 - $가 붙은 단어는 변수가 됨 / 중괄호 안에서 선언하면 중괄호 안에서만 사용 가능! 중괄호 벗어나면 사용할 수 없음 지역변수..? 이 지역변수를 전역변수로 사용하고 싶으면 !global(flag라고 함)을 붙이면 됨!!! 전역 변수는 그냥 최상단에 두고 쓰는게 좋다~
+// 바깥으로 뻬면 전역변수가 됨!!! 변수의 스코프라고 함!!!
+// 전역으로 빼고 싶은 요소 앞에 @at-root를 붙이면 전역으로 빠진다~
+// 사칙연산 가능!!! ex) 20px - 10px,  나누기와 곱하기 시 () 사용!, 꼭 띄어쓰기 해서 사용해야됨!!
+
+@import "vars";
+@import "mixin";
+// 확장자 지워도 됨!(앞의 언더바는 생략해도됨, 언더바를 사용하면 css를 생성하지 않음)
+
+#header {
+  $color: #111;
+  .container {
+    display: flex;
+    #gnb {
+      color: $color;
+      ul {
+        display: flex;
+        &.list {
+          border: 1px solid #f00;
+        }
+        li {
+          &:hover .depth01 {
+            color: #f00;
+          }
+          .depth01 {
+            display: flex;
+            margin: {
+              top: 20px;
+              bottom: 30px;
+            }
+            background: {
+              image: url("");
+              size: cover;
+              repeat: no-repeat;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #gnb {
+    color: $color;
+  }
+}
+#mainVisual {
+  .slogan {
+    @include absCenter(false, true);
+  }
+}
+// inmix 사용 방법
+#news ul li {
+  h3 {
+    @include ellipsis;
+    @include longShadow(rgba(1, 0, 0, 4), 100);
+  }
+  .desc {
+    @include multiEllipsis(3);
+  }
+}
