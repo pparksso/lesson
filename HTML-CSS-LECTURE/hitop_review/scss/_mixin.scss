@@ -11,6 +11,7 @@
   height: ($lineHeight * 1em * $line);
   overflow: hidden;
   display: -webkit-box;
+  /* autoprefixer: off */
   -webkit-line-clamp: $line;
   -webkit-box-orient: vertical;
 }

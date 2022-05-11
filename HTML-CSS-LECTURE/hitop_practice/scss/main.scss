@@ -306,7 +306,7 @@ $fontLarge: 48px;
     margin: 0 auto;
     text-align: center;
     color: #fff;
-    padding-bottom: 100px;
+    padding-bottom: 150px;
     h2 {
       font-size: 48px;
       font-weight: 500;
@@ -328,15 +328,6 @@ $fontLarge: 48px;
 }
 // customer end
 
-#footer {
-  .utilMenu {
-    width: 1200px;
-    margin: 0 auto;
-    ul {
-      display: flex;
-    }
-  }
-}
 @keyframes mouseAnimation {
   0% {
     transform: translateY(20px);
