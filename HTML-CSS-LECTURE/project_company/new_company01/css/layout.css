@@ -2,11 +2,11 @@ body { font-family: "Montserrat", "Noto Sans KR", sans-serif; font-size: 16px; }
 
 a { text-decoration: none; color: inherit; }
 
-#header { width: 100%; height: 130px; position: relative; border-bottom: 1px solid #000; }
+#header { width: 100%; height: 130px; position: relative; }
 
-#header .container { display: flex; max-width: 1600px; position: relative; margin: 0 auto; }
+#header .container { display: flex; max-width: 1500px; position: relative; margin: 0 auto; }
 
-#header .container #logo { display: flex; height: 130px; align-items: center; }
+#header .container #logo { display: flex; height: 130px; align-items: center; left: 20%; }
 
 #header .container .gnb { position: absolute; right: 0; }
 
@@ -26,7 +26,7 @@ a { text-decoration: none; color: inherit; }
 
 #header .container .gnb .nav .list .depth01:hover::after { display: block; }
 
-#header .container .gnb .nav .list .depth02 { font-size: 16px; border: 1px solid #000; box-sizing: border-box; background-color: #000; color: #999; padding: 30px 30px; font-weight: 500; line-height: 2.5; position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; opacity: 0; transition: opacity 0.1s ease-in-out; }
+#header .container .gnb .nav .list .depth02 { font-size: 16px; border: 1px solid #000; box-sizing: border-box; background-color: #000; color: #999; padding: 30px 30px; font-weight: 500; line-height: 2.5; position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; opacity: 0; transition: opacity 0.1s ease-in-out; z-index: 99; }
 
 #header .container .gnb .nav .list .depth02 > li:hover { color: #fff; }
 
@@ -46,7 +46,7 @@ a { text-decoration: none; color: inherit; }
 
 #header .container .gnb .nav .navIcon .earth:hover::after { display: block; }
 
-#header .container .gnb .nav .navIcon .depth02 { text-align: center; font-size: 16px; border: 1px solid #000; box-sizing: border-box; background-color: #000; color: #999; padding: 30px 30px; font-weight: 500; line-height: 2.5; white-space: nowrap; opacity: 0; transition: opacity 0.1s ease-in-out; }
+#header .container .gnb .nav .navIcon .depth02 { text-align: center; font-size: 16px; border: 1px solid #000; box-sizing: border-box; background-color: #000; color: #999; padding: 30px 30px; font-weight: 500; line-height: 2.5; white-space: nowrap; opacity: 0; transition: opacity 0.1s ease-in-out; z-index: 99; }
 
 #header .container .gnb .nav .navIcon .depth02 > li:hover { color: #fff; }
 

@@ -12,16 +12,14 @@
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- css -->
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/common.css" />
     <!-- swipper -->
-    <link rel="stylesheet" href="../css/swiper.min.css" />
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
     <script src="../JS/swiper-bundle.min.js"></script>
   </head>
   <body>
@@ -32,7 +30,7 @@
           <a href=""><img src="../images/common/logo.png" alt="맑은소프트" /></a>
         </h1>
         <nav id="gnb">
-          <h2>gnb</h2>
+          <h2 class="blind">gnb</h2>
           <ul class="list">
             <li>
               <a href="" class="depth01">클라우드LMS</a>
@@ -95,14 +93,12 @@
                 <li><a href="">인재채용</a></li>
               </ul>
             </li>
-            <li>
-              <a href="" class="depth01">고객센터</a>
-              <ul class="depth02">
-                <li><a href="">고객센터</a></li>
-              </ul>
-            </li>
           </ul>
         </nav>
+        <div class="customer">
+          <div class="depth01"><a href="">고객센터</a></div>
+          <div class="depth02"><a href="">고객센터</a></div>
+        </div>
       </div>
       <!-- <div class="line"></div> -->
     </header>
@@ -154,10 +150,193 @@
       </ul>
       <button class="prev"><span class="material-icons"> chevron_left </span></button>
       <button class="next"><span class="material-icons"> chevron_right </span></button>
+      <div class="pagination"></div>
     </div>
+    <!-- mainVisual end -->
+    <section id="partner" class="section">
+      <div class="titleBox">
+        <h2>
+          맑은소프트는 <strong><span>250개의 고객사</span>와 함께 성장중</strong>
+        </h2>
+      </div>
+      <div class="swiper-container">
+        <ul class="list swiper-wrapper">
+          <li class="swiper-slide">
+            <a href="">
+              <div class="imgBox">
+                <img src="../images/main/news01.jpg" alt="" />
+                <span class="sticker"> 사업주 환급 </span>
+                <div class="cover">
+                  <p>#s현대자동차 - 현대NGV</p>
+                  <p>#맞춤형</p>
+                  <a href="">웹사이트 방문</a>
+                </div>
+              </div>
+              <div class="txtBox">
+                <p>자동차 산업의 기술 인재 육성</p>
+                <h3>현대자동차 - 현대NGV</h3>
+              </div>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="">
+              <div class="imgBox">
+                <img src="../images/main/news02.jpg" alt="" />
+                <span class="sticker"> 사업주 환급 </span>
+                <div class="cover">
+                  <p>#s현대자동차 - 현대NGV</p>
+                  <p>#맞춤형</p>
+                  <a href="">웹사이트 방문</a>
+                </div>
+              </div>
+              <div class="txtBox">
+                <p>자동차 산업의 기술 인재 육성</p>
+                <h3>현대자동차 - 현대NGV</h3>
+              </div>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="">
+              <div class="imgBox">
+                <img src="../images/main/news03.jpg" alt="" />
+                <span class="sticker"> 사업주 환급 </span>
+                <div class="cover">
+                  <p>#s현대자동차 - 현대NGV</p>
+                  <p>#맞춤형</p>
+                  <a href="">웹사이트 방문</a>
+                </div>
+              </div>
+              <div class="txtBox">
+                <p>자동차 산업의 기술 인재 육성</p>
+                <h3>현대자동차 - 현대NGV</h3>
+              </div>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="">
+              <div class="imgBox">
+                <img src="../images/main/news04.jpg" alt="" />
+                <span class="sticker"> 사업주 환급 </span>
+                <div class="cover">
+                  <p>#s현대자동차 - 현대NGV</p>
+                  <p>#맞춤형</p>
+                  <a href="">웹사이트 방문</a>
+                </div>
+              </div>
+              <div class="txtBox">
+                <p>자동차 산업의 기술 인재 육성</p>
+                <h3>현대자동차 - 현대NGV</h3>
+              </div>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="">
+              <div class="imgBox">
+                <img src="../images/main/news05.jpg" alt="" />
+                <span class="sticker"> 사업주 환급 </span>
+                <div class="cover">
+                  <p>#s현대자동차 - 현대NGV</p>
+                  <p>#맞춤형</p>
+                  <a href="">웹사이트 방문</a>
+                </div>
+              </div>
+              <div class="txtBox">
+                <p>자동차 산업의 기술 인재 육성</p>
+                <h3>현대자동차 - 현대NGV</h3>
+              </div>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="">
+              <div class="imgBox">
+                <img src="../images/main/news06.jpg" alt="" />
+                <span class="sticker"> 사업주 환급 </span>
+                <div class="cover">
+                  <p>#s현대자동차 - 현대NGV</p>
+                  <p>#맞춤형</p>
+                  <a href="">웹사이트 방문</a>
+                </div>
+              </div>
+              <div class="txtBox">
+                <p>자동차 산업의 기술 인재 육성</p>
+                <h3>현대자동차 - 현대NGV</h3>
+              </div>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="">
+              <div class="imgBox">
+                <img src="../images/main/news07.jpg" alt="" />
+                <span class="sticker"> 사업주 환급 </span>
+                <div class="cover">
+                  <p>#s현대자동차 - 현대NGV</p>
+                  <p>#맞춤형</p>
+                  <a href="">웹사이트 방문</a>
+                </div>
+              </div>
+              <div class="txtBox">
+                <p>자동차 산업의 기술 인재 육성</p>
+                <h3>현대자동차 - 현대NGV</h3>
+              </div>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="">
+              <div class="imgBox">
+                <img src="../images/main/news08.jpg" alt="" />
+                <span class="sticker"> 사업주 환급 </span>
+                <div class="cover">
+                  <p>#s현대자동차 - 현대NGV</p>
+                  <p>#맞춤형</p>
+                  <a href="">웹사이트 방문</a>
+                </div>
+              </div>
+              <div class="txtBox">
+                <p>자동차 산업의 기술 인재 육성</p>
+                <h3>현대자동차 - 현대NGV</h3>
+              </div>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="">
+              <div class="imgBox">
+                <img src="../images/main/news09.jpg" alt="" />
+                <span class="sticker"> 사업주 환급 </span>
+                <div class="cover">
+                  <p>#s현대자동차 - 현대NGV</p>
+                  <p>#맞춤형</p>
+                  <a href="">웹사이트 방문</a>
+                </div>
+              </div>
+              <div class="txtBox">
+                <p>자동차 산업의 기술 인재 육성</p>
+                <h3>현대자동차 - 현대NGV</h3>
+              </div>
+            </a>
+          </li>
+          <li class="swiper-slide">
+            <a href="">
+              <div class="imgBox">
+                <img src="../images/main/news10.jpg" alt="" />
+                <span class="sticker"> 사업주 환급 </span>
+                <div class="cover">
+                  <p>#s현대자동차 - 현대NGV</p>
+                  <p>#맞춤형</p>
+                  <a href="">웹사이트 방문</a>
+                </div>
+              </div>
+              <div class="txtBox">
+                <p>자동차 산업의 기술 인재 육성</p>
+                <h3>현대자동차 - 현대NGV</h3>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
     <script>
       new Swiper("#mainVisual", {
-        // effect: "cube",
+        effect: "fade", //slide, fade, cube, coverflow, card
         speed: 1000,
         loop: true,
         navigation: {
@@ -165,8 +344,40 @@
           prevEl: "#mainVisual .prev",
         },
         autoplay: {
-          delay: 2000,
+          delay: 3000,
+          disableOnInteraction: false,
         },
+        pagination: {
+          el: "#mainVisual .pagination",
+          type: "bullets",
+          clickable: true,
+        },
+      });
+
+      new Swiper("#partner .swiper-container", {
+        slidesPerView: 5,
+        spaceBetween: 20,
+        centeredSlides: true,
+        loop: true,
+        mousewheel: true,
+      });
+
+      const gnb = document.querySelector("#gnb");
+      const header = document.querySelector("#header");
+      const customer = document.querySelector("#header .customer");
+
+      gnb.addEventListener("mouseenter", function () {
+        header.classList.add("on");
+      });
+      gnb.addEventListener("mouseleave", function () {
+        header.classList.remove("on");
+      });
+
+      customer.addEventListener("mouseenter", function () {
+        header.classList.add("on");
+      });
+      customer.addEventListener("mouseleave", function () {
+        header.classList.remove("on");
       });
     </script>
   </body>

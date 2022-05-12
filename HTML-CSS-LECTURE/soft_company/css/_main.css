@@ -1,0 +1,99 @@
+/* vh:veiwport height의 줄임말
+  %는 부모요소에 의해 결정됨 */
+/* line-height: 줄과 줄 사이 간격 */
+/* transition의 all은 모두 적용해달라는 의미 */
+/* z-index는 포지션을 필요로함,겹칠 경우 숫자가 큰 것이 위로 올라감! */
+/* block요소는 부모요소 따라의 크기를 가짐 */
+/* css에서 연산(단위가 달라도 괜찮)!!
+  calc() <-안에 식 넣어주면 됨 */
+#mainVisual {
+  margin-top: 100px;
+  overflow: hidden;
+  position: relative;
+}
+#mainVisual ul li {
+  height: calc(100vh - 100px);
+  color: #fff;
+  position: relative;
+}
+#mainVisual ul .visual01 {
+  background-image: url("../images/main/visual01.jpg");
+}
+#mainVisual ul .visual02 {
+  background-image: url("../images/main/visual02.jpg");
+}
+#mainVisual ul .visual03 {
+  background-image: url("../images/main/visual03.jpg");
+}
+#mainVisual ul li:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+#mainVisual ul li .txtBox {
+  width: 1280px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+#mainVisual ul li .txtBox .headTxt {
+  font-size: 24px;
+  border-bottom: 1px solid #fff;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+#mainVisual ul li .txtBox h2 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 20px 0;
+}
+#mainVisual ul li .txtBox .descTxt {
+  font-size: 18px;
+}
+
+#mainVisual ul li .txtBox a {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 180px;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 90px;
+  transition: all 0.25s ease;
+}
+#mainVisual ul li .txtBox a:hover {
+  background-color: #fff;
+  color: #000;
+}
+#mainVisual button {
+  position: absolute;
+  top: 50%;
+  /* transform은 위치를 옮기는 것. translate는 크키를 기준으로 움직인다! */
+  transform: translateY(-50%);
+  z-index: 2;
+  color: #fff;
+  background: none;
+  border: 1px solid #fff;
+  width: 80px;
+  height: 80px;
+}
+#mainVisual button .material-icons {
+  font-size: 64px;
+}
+#mainVisual .next {
+  right: 50px;
+}
+#mainVisual .prev {
+  left: 50px;
+}

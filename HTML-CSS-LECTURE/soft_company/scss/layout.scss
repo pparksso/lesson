@@ -1,0 +1,163 @@
+@import "vars";
+@import "mixin";
+
+// html {
+//   font-size: 10px;
+// }
+
+body {
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+  font-size: $font-nomal;
+  min-height: 2000px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+#header {
+  height: 100px;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  &.on {
+    height: 400px;
+  }
+
+  &:after {
+    @include pseudo;
+    @include box(100%, 1px, #ccc);
+    top: 100px;
+  }
+  .container {
+    width: 1280px;
+    display: flex;
+    // justify-content: space-between;
+    .customer {
+      margin-left: auto;
+      .depth01 {
+        display: flex;
+        height: 100px;
+        align-items: center;
+        a {
+          padding: 10px 20px;
+          align-items: center;
+          font-size: 18px;
+          font-weight: 500;
+          border: 1px solid #000;
+          border-radius: 100px;
+          transition: all 0.25s ease-in-out;
+          &:hover {
+            background-color: $main-color;
+            color: #fff;
+            border-color: $main-color;
+          }
+          &::before {
+            content: "\f0e2";
+            font-family: "Material Icons";
+            font-size: 24px;
+            vertical-align: middle;
+          }
+        }
+      }
+      .depth02 {
+        text-align: center;
+        padding-top: 30px;
+        a {
+          &:hover {
+            color: $main-color;
+            text-decoration: underline;
+          }
+          &::after {
+            content: "\e89e";
+            font-family: "Material Icons";
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+#logo {
+  a {
+    height: 100px;
+    display: flex;
+    align-items: center;
+  }
+}
+#gnb {
+  margin-left: 100px;
+  .list {
+    display: flex;
+    > li {
+      &:hover {
+        .depth01 {
+          color: $main-color;
+        }
+      }
+      .depth01 {
+        display: flex;
+        position: relative;
+        height: 100px;
+        padding: 0 30px;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 500;
+        transition: color 0.25s ease-in-out;
+        &:after {
+          @include pseudo;
+          left: 30px;
+          right: 30px;
+          height: 2px;
+          bottom: 0;
+          background-color: $main-color;
+          transform: scaleX(0);
+          transition: transform 0.25s ease-in-out;
+        }
+        &:hover:after {
+          transform: scaleX(1);
+        }
+      }
+      .depth02 {
+        padding-left: 30px;
+        padding-top: 30px;
+        > li a {
+          display: block;
+          padding: 5px 0;
+          &:hover {
+            color: $main-color;
+            text-decoration: underline;
+          }
+        }
+      }
+      .depth03 {
+        font-size: 14px;
+        padding: 10px 0;
+        color: #666;
+        li {
+          a {
+            display: block;
+            padding: 5px 0 5px 5px;
+            position: relative;
+            &:before {
+              @include pseudo;
+              @include box(4px, 4px, #666);
+              @include absCenter(true, true);
+              border-radius: 4px;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
