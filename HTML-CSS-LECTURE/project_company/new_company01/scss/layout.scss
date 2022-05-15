@@ -92,7 +92,7 @@ a {
         }
         .navIcon {
           display: flex;
-          li {
+          .language {
             &:hover .depth02 {
               opacity: 1;
             }
@@ -132,10 +132,10 @@ a {
             padding: 30px 30px;
             font-weight: 500;
             line-height: 2.5;
-            white-space: nowrap;
             opacity: 0;
+            white-space: nowrap;
             transition: opacity 0.1s ease-in-out;
-            z-index: 99;
+            z-index: 200;
             & > li:hover {
               color: #fff;
             }
@@ -143,6 +143,125 @@ a {
           .material-icons {
             font-weight: 700;
             font-size: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+// 지구 depth02 화면에 가림 왜지??
+#footer {
+  background-color: #000;
+  .containerAll {
+    .inner {
+      display: flex;
+      justify-content: space-between;
+      padding: 130px 0;
+      .title {
+        width: 600px;
+        color: #fff;
+      }
+      .footerRight {
+        .footerMenu {
+          ul {
+            margin-bottom: 60px;
+            li {
+              color: #fff;
+              padding-bottom: 20px;
+              font-weight: 700;
+              font-size: 25px;
+              position: relative;
+              a {
+                &::before {
+                  content: "";
+                  background-color: #fff;
+                  width: 5px;
+                  height: 5px;
+                  border-radius: 10px;
+                  position: absolute;
+                  top: 8px;
+                  left: -15px;
+                  box-sizing: border-box;
+                  display: none;
+                }
+                &:hover::before {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+        .infoWrap {
+          .richwood {
+            color: #fff;
+            font-size: 25px;
+            font-weight: 700;
+            position: relative;
+            &::after {
+              content: "\e5ce";
+              font-family: "Material Icons";
+              font-size: 24px;
+              position: absolute;
+              font-weight: 500;
+              top: 3px;
+              right: -32px;
+              transition: transform 0.25s ease;
+            }
+            &:active::after {
+              transform: rotate(180deg);
+            }
+          }
+          .info {
+            color: #695c51;
+            display: flex;
+            flex-direction: column;
+            line-height: 2;
+            margin-top: 20px;
+            // display: none;
+            &.infoOpen {
+              display: block;
+            }
+            .phone {
+              p {
+                display: inline-block;
+                margin-left: 20px;
+              }
+              span {
+                margin-right: 10px;
+              }
+              a {
+                transition: color 0.25s ease-in-out;
+                &:hover {
+                  color: #fff;
+                }
+              }
+            }
+            .adress {
+              span {
+                margin-right: 20px;
+              }
+            }
+          }
+        }
+        .law {
+          line-height: 2.5;
+          margin-top: 40px;
+          .privacy {
+            font-size: 14px;
+
+            strong {
+              color: #fff;
+              font-weight: 700;
+              margin-right: 20px;
+            }
+            a {
+              color: #695c51;
+              font-weight: 500;
+            }
+          }
+          p {
+            color: #695c51;
+            font-weight: 500;
           }
         }
       }
