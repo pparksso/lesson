@@ -95,6 +95,126 @@
       }
     }
   }
+  .btns {
+    .prev {
+      position: absolute;
+      top: 50%;
+      left: 100px;
+      z-index: 100;
+      border: 2px solid #9a9a9d;
+      width: 45px;
+      height: 45px;
+      border-radius: 50px;
+      background: none;
+      transition: all 0.25s ease-in-out;
+      span {
+        font-size: 12px;
+        font-weight: 700;
+        color: #fff;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%);
+        display: none;
+        position: absolute;
+      }
+      &::before {
+        content: "\e5cb";
+        font-family: "Material icons";
+        font-size: 24px;
+        color: #b9babb;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20%;
+      }
+      &::after {
+        content: "\e5cb";
+        font-family: "Material icons";
+        font-size: 24px;
+        color: #fff;
+        position: fixed;
+        top: 556px;
+        left: 110px;
+        display: none;
+      }
+
+      &:hover {
+        width: 100px;
+        border: 2px solid #fff;
+        span {
+          display: block;
+        }
+      }
+      &:hover::before {
+        display: none;
+      }
+      &:hover::after {
+        display: block;
+      }
+    }
+    .next {
+      position: absolute;
+      top: 50%;
+      right: 100px;
+      z-index: 100;
+      border: 2px solid #9a9a9d;
+      width: 45px;
+      height: 45px;
+      border-radius: 50px;
+      background: none;
+      transition: all 0.25s ease-in-out;
+      span {
+        font-size: 12px;
+        font-weight: 700;
+        color: #fff;
+        top: 50%;
+        right: 50%;
+        transform: translateY(-50%);
+        display: none;
+        position: absolute;
+      }
+      &::before {
+        content: "\e5cc";
+        font-family: "Material icons";
+        font-size: 24px;
+        color: #b9babb;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 20%;
+      }
+      &::after {
+        content: "\e5cc";
+        font-family: "Material icons";
+        font-size: 24px;
+        color: #fff;
+        position: fixed;
+        top: 556px;
+        right: 110px;
+        display: none;
+      }
+
+      &:hover {
+        width: 100px;
+        border: 2px solid #fff;
+        span {
+          display: block;
+        }
+      }
+      &:hover::before {
+        display: none;
+      }
+      &:hover::after {
+        display: block;
+      }
+    }
+  }
+  .pagination {
+    position: absolute;
+    bottom: 100px;
+    text-align: center;
+    z-index: 100;
+  }
 }
 // swiper 미완성
 

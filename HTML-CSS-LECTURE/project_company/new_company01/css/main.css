@@ -30,6 +30,40 @@
 
 #mainVisual ul li .textBox a span::after { content: ""; background-color: #fff; width: 0; height: 2px; position: absolute; bottom: -10px; left: 0; transition: width 0.15s ease-in-out; }
 
+#mainVisual .btns .prev { position: absolute; top: 50%; left: 100px; z-index: 100; border: 2px solid #9a9a9d; width: 45px; height: 45px; border-radius: 50px; background: none; transition: all 0.25s ease-in-out; }
+
+#mainVisual .btns .prev span { font-size: 12px; font-weight: 700; color: #fff; top: 50%; left: 50%; transform: translateY(-50%); display: none; position: absolute; }
+
+#mainVisual .btns .prev::before { content: "\e5cb"; font-family: "Material icons"; font-size: 24px; color: #b9babb; position: absolute; top: 50%; transform: translateY(-50%); left: 20%; }
+
+#mainVisual .btns .prev::after { content: "\e5cb"; font-family: "Material icons"; font-size: 24px; color: #fff; position: fixed; top: 556px; left: 110px; display: none; }
+
+#mainVisual .btns .prev:hover { width: 100px; border: 2px solid #fff; }
+
+#mainVisual .btns .prev:hover span { display: block; }
+
+#mainVisual .btns .prev:hover::before { display: none; }
+
+#mainVisual .btns .prev:hover::after { display: block; }
+
+#mainVisual .btns .next { position: absolute; top: 50%; right: 100px; z-index: 100; border: 2px solid #9a9a9d; width: 45px; height: 45px; border-radius: 50px; background: none; transition: all 0.25s ease-in-out; }
+
+#mainVisual .btns .next span { font-size: 12px; font-weight: 700; color: #fff; top: 50%; right: 50%; transform: translateY(-50%); display: none; position: absolute; }
+
+#mainVisual .btns .next::before { content: "\e5cc"; font-family: "Material icons"; font-size: 24px; color: #b9babb; position: absolute; top: 50%; transform: translateY(-50%); left: 20%; }
+
+#mainVisual .btns .next::after { content: "\e5cc"; font-family: "Material icons"; font-size: 24px; color: #fff; position: fixed; top: 556px; right: 110px; display: none; }
+
+#mainVisual .btns .next:hover { width: 100px; border: 2px solid #fff; }
+
+#mainVisual .btns .next:hover span { display: block; }
+
+#mainVisual .btns .next:hover::before { display: none; }
+
+#mainVisual .btns .next:hover::after { display: block; }
+
+#mainVisual .pagination { position: absolute; bottom: 100px; text-align: center; z-index: 100; }
+
 #update .containerAll { margin-top: 100px; margin-bottom: 130px; }
 
 #update .containerAll .titleNav { display: flex; justify-content: space-between; position: relative; margin-bottom: 50px; }
