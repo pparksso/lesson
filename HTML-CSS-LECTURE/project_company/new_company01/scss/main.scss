@@ -4,6 +4,7 @@
   h2 {
     font-size: 40px;
     font-weight: 700;
+    line-height: 1.2;
   }
 }
 
@@ -97,10 +98,10 @@
 }
 // swiper 미완성
 
-#news {
+#update {
   .containerAll {
     margin-top: 100px;
-    margin-bottom: 80px;
+    margin-bottom: 130px;
     .titleNav {
       display: flex;
       justify-content: space-between;
@@ -134,11 +135,11 @@
       li {
         .searchBar {
           a {
-            padding: 37px 10px;
+            padding: 48px 20px;
             display: block;
-            border: 2px solid #000;
+            border: 3px solid #000;
             box-sizing: border-box;
-            border-radius: 100px;
+            border-radius: 120px;
             transition: background-color 0.25s ease-in-out;
             &:hover {
               color: #fff;
@@ -182,3 +183,617 @@
   }
 }
 // swiper 미완성, 슬러쉬폰트 못찾음
+#business {
+  background-color: #f9f9f9;
+  .containerAll {
+    padding-top: 130px;
+    padding-bottom: 80px;
+    .inner {
+      .titleBox {
+        display: flex;
+        position: relative;
+        .tradeTitle {
+          margin-right: 40px;
+          &:before {
+            content: "";
+            display: block;
+            width: 9px;
+            height: 9px;
+            border-radius: 18px;
+            background-color: #d6000e;
+            position: absolute;
+            top: -40px;
+            left: 99px;
+          }
+          h2 {
+            font-size: 55px;
+            color: #d6000e;
+            margin-bottom: 50px;
+          }
+        }
+        .medicineTitle {
+          // &:visited {
+          //   color: #2d5ffd;
+          // }
+          &::before {
+            content: "";
+            display: block;
+            width: 9px;
+            height: 9px;
+            border-radius: 18px;
+            background-color: #ccc;
+            position: absolute;
+            top: -40px;
+            left: 340px;
+          }
+          h2 {
+            font-size: 55px;
+            color: #ccc;
+            margin-bottom: 50px;
+          }
+        }
+      }
+      .pannel {
+        position: relative;
+        #trading {
+          &.on {
+            display: block;
+          }
+          &.off {
+            display: none;
+          }
+          .textBox {
+            p {
+              font-size: 18px;
+              line-height: 1.5;
+              margin-bottom: 30px;
+            }
+            a {
+              padding: 23px 25px;
+              border: 3px solid #dddddd;
+              box-sizing: border-box;
+              font-weight: 700;
+              margin-bottom: 80px;
+              display: inline-block;
+              transition: all 0.5s ease-in-out;
+              &:hover {
+                border-color: #d6000e;
+                border-radius: 150px;
+              }
+            }
+          }
+          .link {
+            .list {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              li {
+                position: relative;
+                .zoom {
+                  &:hover {
+                    img {
+                      transform: scale(1.1);
+                    }
+                  }
+                  .imgBox {
+                    overflow: hidden;
+                  }
+                }
+                p {
+                  font-size: 20px;
+                  text-align: center;
+                  padding-top: 25px;
+                  margin-bottom: 50px;
+                  font-weight: 500;
+                }
+                img {
+                  width: 306px;
+                  height: 306px;
+                  transition: transform 0.7s ease-in-out;
+                }
+                .box {
+                  display: block;
+                  width: 306px;
+                  height: 306px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  span {
+                    color: #d6000e;
+                    font-weight: 700;
+                    font-size: 40px;
+                    display: inline-block;
+                  }
+                }
+                .letter {
+                  position: absolute;
+                  color: #fff;
+                  font-weight: 700;
+                  top: 45%;
+                  left: 10%;
+                  text-align: left;
+                  line-height: 1.5;
+                  font-size: 22px;
+                }
+              }
+            }
+          }
+        }
+        #medicine {
+          display: none;
+          position: absolute;
+          // background-color: #f9f9f9;
+          &.on {
+            display: block;
+          }
+          &.off {
+            display: none;
+          }
+          .textBox {
+            p {
+              font-size: 18px;
+              line-height: 1.5;
+              margin-bottom: 30px;
+            }
+            a {
+              padding: 23px 25px;
+              border: 3px solid #dddddd;
+              box-sizing: border-box;
+              font-weight: 700;
+              margin-bottom: 80px;
+              display: inline-block;
+              transition: all 0.5s ease-in-out;
+              &:hover {
+                border-color: #2d5ffd;
+                border-radius: 150px;
+              }
+            }
+          }
+          .link {
+            .list {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              li {
+                position: relative;
+                .zoom {
+                  &:hover {
+                    img {
+                      transform: scale(1.03);
+                    }
+                  }
+                  .imgBox {
+                    overflow: hidden;
+                    border-radius: 150px;
+                  }
+                }
+                img {
+                  width: 306px;
+                  height: 306px;
+                  transition: transform 0.7s ease-in-out;
+                  border-radius: 150px;
+                  overflow: hidden;
+                }
+                p {
+                  font-size: 20px;
+                  text-align: center;
+                  padding-top: 25px;
+                  margin-bottom: 50px;
+                  font-weight: 500;
+                }
+                .box {
+                  display: block;
+                  width: 306px;
+                  height: 306px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  span {
+                    color: #2d5ffd;
+                    font-weight: 700;
+                    font-size: 40px;
+                    display: inline-block;
+                  }
+                }
+                .letter {
+                  position: absolute;
+                  color: #fff;
+                  font-weight: 700;
+                  top: 25%;
+                  left: 15%;
+
+                  text-align: center;
+                  line-height: 1.5;
+                  font-size: 22px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// JS 안먹음, 컨테이너 밑의 여백 처리, 제약사업 백그라운드 넣는 방법
+#recommend {
+  .containerAll {
+    margin-top: 100px;
+    .title {
+      margin-bottom: 70px;
+    }
+    .inner {
+      position: relative;
+      .bar {
+        display: flex;
+        .list {
+          .selectBar {
+            border: 2px solid #dedede;
+            width: 140px;
+            height: 70px;
+            border-radius: 100px;
+            display: block;
+            display: flex;
+            margin-right: 20px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            transition: all 0.25s ease-in-out;
+            &:hover {
+              border-color: #000;
+            }
+            &::after {
+              content: "\e5cf";
+              font-family: "Material Icons";
+              font-weight: 500;
+              font-size: 30px;
+            }
+            &.open {
+              border-color: #000;
+              border-bottom: none;
+            }
+            span {
+              font-weight: 700;
+              font-size: 17px;
+            }
+          }
+          .selectList {
+            // display: none;
+            position: absolute;
+            z-index: 99;
+            border: 2px solid #000;
+            width: 220px;
+            height: 210px;
+            border-radius: 0 0 50px 50px;
+            border-top: none;
+            &.open {
+              display: block;
+            }
+            ul {
+              li {
+                padding: 25px 30px 0 30px;
+                .etc {
+                  display: block;
+                  color: #9a9a9d;
+                  font-weight: 400;
+                  font-size: 17px;
+                  &:hover {
+                    color: #000;
+                  }
+                }
+                .all {
+                  color: #000;
+                  font-weight: 400;
+                  font-size: 17px;
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+        .textBox {
+          background-color: #f4f4f4;
+          height: 70px;
+          width: 900px;
+          margin-right: 10px;
+          box-sizing: border-box;
+          border-radius: 100px 0 0 100px;
+          padding-left: 30px;
+          display: flex;
+          justify-content: flex-start;
+          input {
+            background: none;
+            border: none;
+            font-size: 17px;
+            width: 100%;
+            outline: none;
+            font-weight: 500;
+          }
+        }
+        .search {
+          button {
+            width: 180px;
+            height: 70px;
+            background-color: #000;
+            box-sizing: border-box;
+            border-radius: 0 100px 100px 0;
+            span {
+              font-size: 17px;
+              font-weight: 700;
+              color: #fff;
+            }
+          }
+        }
+      }
+      .tagList {
+        margin-top: 30px;
+        position: absolute;
+        z-index: 99;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        span {
+          font-size: 16px;
+          font-weight: 700;
+        }
+        ul {
+          display: flex;
+          li {
+            margin-right: 20px;
+            color: #9a9a9d;
+            &:hover {
+              color: #000;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// js 안먹음
+#newsSns {
+  margin-top: 215px;
+  background-color: #f9f9f9;
+  .containerAll {
+    .inner {
+      padding: 100px 0 80px 0;
+      display: flex;
+      justify-content: space-between;
+      #news {
+        width: 650px;
+        .title {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          margin-bottom: 30px;
+          a {
+            font-size: 14px;
+            color: #9a9a9d;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            &:after {
+              content: "\e5cc";
+              font-family: "Material Icons";
+              padding-left: 5px;
+              font-size: 16px;
+              top: 1px;
+            }
+            &:hover {
+              color: #000;
+            }
+          }
+        }
+        .mainNews {
+          display: flex;
+          justify-content: space-between;
+          .imgBox {
+            width: 307px;
+            height: 307px;
+            overflow: hidden;
+          }
+          img {
+            width: 307px;
+            height: 307px;
+            transition: transform 0.5s ease-in-out;
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+          .newsTitle {
+            font-size: 20px;
+            font-weight: 500;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            margin-top: 25px;
+            margin-bottom: 15px;
+          }
+          .desc {
+            line-height: 1.5;
+            height: 3em;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            text-overflow: ellipsis;
+            color: #786f6e;
+            margin-bottom: 25px;
+          }
+          .date {
+            font-size: 14px;
+            color: #b9babb;
+          }
+          .news01 {
+            width: 307px;
+            height: 491px;
+          }
+          .news02 {
+            width: 307px;
+            height: 491px;
+          }
+        }
+      }
+      #sns {
+        width: 315px;
+        .title {
+          margin-bottom: 20px;
+        }
+        .snsMain {
+          img {
+            width: 310px;
+            height: 310px;
+            border-radius: 150px;
+            margin-bottom: 30px;
+          }
+          .snsDesc {
+            width: 310px;
+            margin: 0 auto 50px auto;
+            text-align: center;
+            span {
+              font-size: 20px;
+              font-weight: 700;
+            }
+          }
+          .snsList {
+            width: 230px;
+            display: flex;
+            margin: 0 auto;
+            justify-content: space-between;
+            .material-icons {
+              font-size: 30px;
+              border: 1px solid #b9babb;
+              color: #9a9a9d;
+              padding: 13px;
+              border-radius: 30px;
+              &:hover {
+                border-color: #000;
+                background-color: #000;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//뉴스 기사 부분 ... 안먹음
+#footer {
+  background-color: #000;
+  .containerAll {
+    .inner {
+      display: flex;
+      justify-content: space-between;
+      padding: 130px 0;
+      .title {
+        width: 600px;
+        color: #fff;
+      }
+      .footerRight {
+        .footerMenu {
+          ul {
+            margin-bottom: 60px;
+            li {
+              color: #fff;
+              padding-bottom: 20px;
+              font-weight: 700;
+              font-size: 25px;
+              position: relative;
+              a {
+                &::before {
+                  content: "";
+                  background-color: #fff;
+                  width: 5px;
+                  height: 5px;
+                  border-radius: 10px;
+                  position: absolute;
+                  top: 8px;
+                  left: -15px;
+                  box-sizing: border-box;
+                  display: none;
+                }
+                &:hover::before {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+        .infoWrap {
+          .richwood {
+            color: #fff;
+            font-size: 25px;
+            font-weight: 700;
+            position: relative;
+            &::after {
+              content: "\e5ce";
+              font-family: "Material Icons";
+              font-size: 24px;
+              position: absolute;
+              font-weight: 500;
+              top: 3px;
+              right: -32px;
+              transition: transform 0.25s ease;
+            }
+            &:active::after {
+              transform: rotate(180deg);
+            }
+          }
+          .info {
+            color: #695c51;
+            display: flex;
+            flex-direction: column;
+            line-height: 2;
+            margin-top: 20px;
+            // display: none;
+            &.infoOpen {
+              display: block;
+            }
+            .phone {
+              p {
+                display: inline-block;
+                margin-left: 20px;
+              }
+              span {
+                margin-right: 10px;
+              }
+              a {
+                transition: color 0.25s ease-in-out;
+                &:hover {
+                  color: #fff;
+                }
+              }
+            }
+            .adress {
+              span {
+                margin-right: 20px;
+              }
+            }
+          }
+        }
+        .law {
+          line-height: 2.5;
+          margin-top: 40px;
+          .privacy {
+            font-size: 14px;
+
+            strong {
+              color: #fff;
+              font-weight: 700;
+              margin-right: 20px;
+            }
+            a {
+              color: #695c51;
+              font-weight: 500;
+            }
+          }
+          p {
+            color: #695c51;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+// js 안먹음

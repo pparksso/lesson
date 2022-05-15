@@ -1,0 +1,151 @@
+@import "vars";
+@import "mixin";
+
+// html {
+//   font-size: 10px;
+// }
+.blind {
+  display: none;
+}
+body {
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+  // font-size: $font-normal;
+  // color: $font-color;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+#header {
+  .container {
+    width: auto;
+    display: flex;
+  }
+  &:after {
+    @include pseudo;
+    @include box(100%, 1px, #ccc);
+    left: 0;
+    top: 80px;
+    pointer-events: none;
+  }
+}
+#logo {
+  a {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    padding: 0 40px;
+  }
+}
+#gnb {
+  &::after {
+    @include pseudo;
+    @include box(100%, 500px, transparent);
+    left: 0px;
+    top: 80px;
+    z-index: -1;
+  }
+  .list {
+    display: flex;
+    > li {
+      &:hover {
+        .inner {
+          display: block;
+        }
+      }
+      .depth01 {
+        display: flex;
+        height: 80px;
+        padding: 0 40px;
+        font-size: 20px;
+        font-weight: 500;
+        justify-content: center;
+        align-items: center;
+      }
+      .inner {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        background-color: #fff;
+        display: none;
+        padding-top: 50px;
+        .depth02Box {
+          width: 1280px;
+          margin: auto;
+        }
+
+        .depth02 {
+          display: flex;
+          width: 75%;
+          // margin: auto;
+          flex-wrap: wrap;
+          > li {
+            flex-basis: 25%;
+            margin-bottom: 30px;
+            .depth03 {
+              font-weight: 500;
+              display: block;
+              padding: 10px 0;
+            }
+            ul {
+              color: #666;
+              font-size: 14px;
+              li {
+                a {
+                  display: block;
+                  padding: 5px 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .loginBox {
+    position: absolute;
+    width: 1280px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 80px;
+    display: flex;
+    justify-content: flex-end;
+    pointer-events: none;
+    display: none;
+    .inner {
+      pointer-events: auto;
+      text-align: center;
+      padding-top: 50px;
+      .depth01 {
+        font-weight: 500;
+        padding: 10px 0;
+        text-align: left;
+        margin-bottom: 50px;
+        user-select: none;
+      }
+      p {
+        line-height: 1.5;
+        font-weight: 500;
+        user-select: none;
+      }
+      button {
+        background: none;
+        padding: 10px 20px;
+        background-color: #ccc;
+        font-weight: 700;
+        border: none;
+        border-radius: 5px;
+        margin-top: 30px;
+      }
+    }
+  }
+  &.on {
+    .loginBox {
+      display: flex;
+    }
+  }
+}

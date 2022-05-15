@@ -5,10 +5,11 @@
   padding: 100px 0;
   .titleBox {
     text-align: center;
+    margin-bottom: 50px;
     h2 {
       font-size: $font-large;
       font-weight: 100;
-      line-height: 1.5;
+      line-height: 1.25;
       strong {
         font-weight: 700;
         display: block;
@@ -16,6 +17,32 @@
           color: $main-color;
         }
       }
+    }
+  }
+}
+.list {
+  display: flex;
+  &.center {
+    justify-content: center;
+  }
+}
+.btns {
+  display: flex;
+  justify-content: center;
+  .btn {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    overflow: hidden;
+    padding: 0 40px;
+    border-radius: 100px;
+    background-color: $main-color;
+    @include longShadow(darken($main-color, 10), 30);
+    &.line {
+      background: none;
+      text-shadow: none;
+      border: 2px solid $main-color;
+      color: $main-color;
     }
   }
 }
@@ -136,23 +163,142 @@
     }
   }
 }
-#partner {
+#portfolio {
+  position: relative;
   .swiper-container {
     overflow: hidden;
   }
-  .list {
+  ul {
     li {
-      width: auto;
-      border: 1px solid #000;
+      width: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      &:hover {
+        .imgBox {
+          .sticer {
+            background-color: #fff;
+            color: $main-color;
+          }
+          .cover {
+            top: 0;
+          }
+        }
+      }
       .imgBox {
+        overflow: hidden;
+        position: relative;
         img {
-          width: 250px;
+          width: 100%;
+          vertical-align: top;
+        }
+        .cover {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          background-color: rgba($main-color, 0.8);
+          color: #fff;
+          padding-left: 20px;
+          padding-top: 60px;
+          box-sizing: border-box;
+          line-height: 1.5;
+          top: 100%;
+          transition: all 0.25s ease;
+          .link {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            &:after {
+              content: "\f1df";
+              font-family: "Material Icons";
+              font-size: 10px;
+              display: inline-block;
+              margin-left: 5px;
+              transform: translateY(2px);
+            }
+          }
+        }
+        .sticker {
+          position: absolute;
+          left: 10px;
+          top: 10px;
+          padding: 10px 20px;
+          display: block;
+          background-color: $main-color;
+          color: #fff;
+          border-radius: 100px;
+          font-size: 14px;
+          z-index: 2;
+          transition: all 0.25s ease-in-out;
         }
       }
       .txtBox {
-        border: 1px solid #666;
-        border-radius: 0 0 20px 20px;
+        border: 1px solid #ccc;
+        border-top: none;
         padding: 20px;
+        text-align: center;
+        border-radius: 0 0 15px 15px;
+        h3 {
+          font-size: 20px;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  .pagination {
+    top: auto;
+    bottom: 200px;
+    width: 800px;
+    left: 50%;
+    height: 10px;
+    border-radius: 100px;
+    overflow: hidden;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 1);
+    .swiper-pagination-progressbar-fill {
+      background-color: #f00;
+      border-radius: 100px;
+    }
+  }
+  .btns {
+    margin-top: 100px;
+    color: #fff;
+    .btn {
+      &::after {
+        content: "\e145";
+        font-family: "Material Icons";
+        display: inline-block;
+        margin-left: 80px;
+      }
+    }
+  }
+}
+#partner {
+  background-color: $bg-color;
+  .titleBox {
+    strong {
+      display: inline-block;
+    }
+    .list {
+      li {
+        background-color: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        margin: 0 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        transition: all 0.25s ease-in-out;
+        &:hover {
+          transform: translateY(-20px);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+        }
+        .txt {
+          padding: 20px;
+          text-align: center;
+          font-size: ($font-medium * 0.75);
+          line-height: 1.25;
+          border-top: 1px solid #eee;
+        }
       }
     }
   }

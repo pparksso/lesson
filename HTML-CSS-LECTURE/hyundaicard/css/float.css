@@ -1,0 +1,7 @@
+.claeaflx::after { content: ""; display: block; clear: both; }
+
+.list { overflow: hidden; }
+
+.list li { float: left; height: 200px; padding: 0 50px; }
+
+.box { background-color: #f00; height: 300px; width: 500px; }

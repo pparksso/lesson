@@ -1,0 +1,11 @@
+.clearFix::after { content: ""; display: block; clear: both; }
+
+.txtBox { width: 1200px; }
+
+.txtBox img { float: left; width: 300px; margin: 20px; }
+
+.txtBox p { width: 500px; line-height: 1; }
+
+.txtBox p:first-letter { font-size: 100px; font-weight: bold; }
+
+.txtBox .box { width: 500px; height: 500px; background-color: #f00; float: left; }

@@ -1,12 +1,22 @@
 .section { padding: 100px 0; }
 
-.section .titleBox { text-align: center; }
+.section .titleBox { text-align: center; margin-bottom: 50px; }
 
-.section .titleBox h2 { font-size: 48px; font-weight: 100; line-height: 1.5; }
+.section .titleBox h2 { font-size: 48px; font-weight: 100; line-height: 1.25; }
 
 .section .titleBox h2 strong { font-weight: 700; display: block; }
 
 .section .titleBox h2 strong span { color: #0f91d0; }
+
+.list { display: flex; }
+
+.list.center { justify-content: center; }
+
+.btns { display: flex; justify-content: center; }
+
+.btns .btn { display: flex; align-items: center; height: 60px; overflow: hidden; padding: 0 40px; border-radius: 100px; background-color: #0f91d0; text-shadow: 1px 1px 0px #0c70a0 ,2px 2px 0px #0c70a0 ,3px 3px 0px #0c70a0 ,4px 4px 0px #0c70a0 ,5px 5px 0px #0c70a0 ,6px 6px 0px #0c70a0 ,7px 7px 0px #0c70a0 ,8px 8px 0px #0c70a0 ,9px 9px 0px #0c70a0 ,10px 10px 0px #0c70a0 ,11px 11px 0px #0c70a0 ,12px 12px 0px #0c70a0 ,13px 13px 0px #0c70a0 ,14px 14px 0px #0c70a0 ,15px 15px 0px #0c70a0 ,16px 16px 0px #0c70a0 ,17px 17px 0px #0c70a0 ,18px 18px 0px #0c70a0 ,19px 19px 0px #0c70a0 ,20px 20px 0px #0c70a0 ,21px 21px 0px #0c70a0 ,22px 22px 0px #0c70a0 ,23px 23px 0px #0c70a0 ,24px 24px 0px #0c70a0 ,25px 25px 0px #0c70a0 ,26px 26px 0px #0c70a0 ,27px 27px 0px #0c70a0 ,28px 28px 0px #0c70a0 ,30px 30px 0px #0c70a0; }
+
+.btns .btn.line { background: none; text-shadow: none; border: 2px solid #0f91d0; color: #0f91d0; }
 
 #mainVisual { margin-top: 100px; overflow: hidden; position: relative; }
 
@@ -50,10 +60,46 @@
 
 #mainVisual .pagination .swiper-pagination-bullet-active::after { width: 100%; transition: width 3s linear; }
 
-#partner .swiper-container { overflow: hidden; }
+#portfolio { position: relative; }
 
-#partner .list li { width: auto; border: 1px solid #000; }
+#portfolio .swiper-container { overflow: hidden; }
 
-#partner .list li .imgBox img { width: 250px; }
+#portfolio ul li { width: 300px; border-radius: 15px; overflow: hidden; }
 
-#partner .list li .txtBox { border: 1px solid #666; border-radius: 0 0 20px 20px; padding: 20px; }
+#portfolio ul li:hover .imgBox .sticer { background-color: #fff; color: #0f91d0; }
+
+#portfolio ul li:hover .imgBox .cover { top: 0; }
+
+#portfolio ul li .imgBox { overflow: hidden; position: relative; }
+
+#portfolio ul li .imgBox img { width: 100%; vertical-align: top; }
+
+#portfolio ul li .imgBox .cover { position: absolute; width: 100%; height: 100%; left: 0; top: 0; background-color: rgba(15, 145, 208, 0.8); color: #fff; padding-left: 20px; padding-top: 60px; box-sizing: border-box; line-height: 1.5; top: 100%; transition: all 0.25s ease; }
+
+#portfolio ul li .imgBox .cover .link { position: absolute; right: 20px; bottom: 20px; }
+
+#portfolio ul li .imgBox .cover .link:after { content: "\f1df"; font-family: "Material Icons"; font-size: 10px; display: inline-block; margin-left: 5px; transform: translateY(2px); }
+
+#portfolio ul li .imgBox .sticker { position: absolute; left: 10px; top: 10px; padding: 10px 20px; display: block; background-color: #0f91d0; color: #fff; border-radius: 100px; font-size: 14px; z-index: 2; transition: all 0.25s ease-in-out; }
+
+#portfolio ul li .txtBox { border: 1px solid #ccc; border-top: none; padding: 20px; text-align: center; border-radius: 0 0 15px 15px; }
+
+#portfolio ul li .txtBox h3 { font-size: 20px; margin-top: 20px; }
+
+#portfolio .pagination { top: auto; bottom: 200px; width: 800px; left: 50%; height: 10px; border-radius: 100px; overflow: hidden; transform: translateX(-50%); background-color: black; }
+
+#portfolio .pagination .swiper-pagination-progressbar-fill { background-color: #f00; border-radius: 100px; }
+
+#portfolio .btns { margin-top: 100px; color: #fff; }
+
+#portfolio .btns .btn::after { content: "\e145"; font-family: "Material Icons"; display: inline-block; margin-left: 80px; }
+
+#partner { background-color: #eff6f8; }
+
+#partner .titleBox strong { display: inline-block; }
+
+#partner .titleBox .list li { background-color: #fff; border-radius: 15px; overflow: hidden; margin: 0 10px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); transition: all 0.25s ease-in-out; }
+
+#partner .titleBox .list li:hover { transform: translateY(-20px); box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15); }
+
+#partner .titleBox .list li .txt { padding: 20px; text-align: center; font-size: 21px; line-height: 1.25; border-top: 1px solid #eee; }

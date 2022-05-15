@@ -1,0 +1,27 @@
+.claeaflx {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+.list {
+  overflow: hidden;
+  li {
+    float: left;
+    height: 200px;
+    padding: 0 50px;
+  }
+  // &::after {
+  //   content: "";
+  //   display: block;
+  //   clear: both;
+  // }
+}
+.box {
+  background-color: #f00;
+  height: 300px;
+  width: 500px;
+  // clear: both;
+}
