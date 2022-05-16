@@ -140,7 +140,7 @@
       </div>
       <div class="pagination"></div>
     </section>
-    <!-- swiper 미완성 -->
+    <!-- mainVisual end -->
     <section id="update">
       <div class="containerAll">
         <div class="titleNav">
@@ -148,66 +148,80 @@
             풍림무약은 <br />
             새롭게 나아갑니다
           </h2>
-          <div class="nav">
-            <button class="prev"><span class="material-icons"> chevron_left </span></button>
-            <span>01</span>
-            <span class="slash"></span>
-            <span>06</span>
-            <button class="next"><span class="material-icons"> chevron_right </span></button>
-          </div>
         </div>
-        <div id="swiper">
-          <div class="search">
+        <div id="new">
+          <div class="search swiper">
             <ul class="swiper-wrapper">
               <li class="swiper-slide">
-                <div class="searchBar">
-                  <a href="">
-                    <h3>새소식</h3>
-                    <span>풍림무약, 굿윌스토어 PC세트 기부물품전달식</span>
-                  </a>
-                </div>
+                <a href="">
+                  <div class="textBox">
+                    <div class="title">
+                      <h3>새소식</h3>
+                    </div>
+                    <div class="desc"><span>풍림무약, 굿윌스토어 PC세트 기부물품전달식</span></div>
+                  </div>
+                </a>
               </li>
               <li class="swiper-slide">
-                <div class="searchBar">
-                  <a href="">
-                    <h3>새소식</h3>
-                    <span>풍림무약,사내소식지 창간호 발행</span>
-                  </a>
-                </div>
+                <a href="">
+                  <div class="textBox">
+                    <div class="title">
+                      <h3>새소식</h3>
+                    </div>
+                    <div class="desc"><span>풍림무약,사내소식지 창간호 발행</span></div>
+                  </div>
+                </a>
               </li>
               <li class="swiper-slide">
-                <div class="searchBar">
-                  <a href="">
-                    <h3>사회공헌</h3>
-                    <span>사회공헌 앞장 선 풍림무약, FUVE365 항바이러스 장갑 기부</span>
-                  </a>
-                </div>
+                <a href="">
+                  <div class="textBox">
+                    <div class="title">
+                      <h3>사회공헌</h3>
+                    </div>
+                    <div class="desc"><span>사회공헌 앞장 선 풍림무약, FUVE365 항바이러스 장갑 기부</span></div>
+                  </div>
+                </a>
               </li>
               <li class="swiper-slide">
-                <div class="searchBar">
-                  <a href="">
-                    <h3>신제품 출시</h3>
-                    <span>풍림이코사펜트산에틸연질캡슐 300mg</span>
-                  </a>
-                </div>
+                <a href="">
+                  <div class="textBox">
+                    <div class="title">
+                      <h3>신제품 출시</h3>
+                    </div>
+                    <div class="desc"><span>풍림이코사펜트산에틸연질캡슐 300mg</span></div>
+                  </div>
+                </a>
               </li>
               <li class="swiper-slide">
-                <div class="searchBar">
-                  <a href="">
-                    <h3>신제품 출시</h3>
-                    <span>Computar Lens 신제품 출시 (Visible+SWIR 및 전동형 원격 제어 Lens connect 시리즈)</span>
-                  </a>
-                </div>
+                <a href="">
+                  <div class="textBox">
+                    <div class="title">
+                      <h3>신제품 출시</h3>
+                    </div>
+                    <div class="desc"><span>Computar Lens 신제품 출시 (Visible+SWIR 및 전동형 원격 제어 Lens connect 시리즈)</span></div>
+                  </div>
+                </a>
               </li>
               <li class="swiper-slide">
-                <div class="searchBar">
-                  <a href="">
-                    <h3>레시피 업데이트</h3>
-                    <span>베이커리 온라인 시연회 10차!-김태양 제과기능장</span>
-                  </a>
-                </div>
+                <a href="">
+                  <div class="textBox">
+                    <div class="title">
+                      <h3>레시피 업데이트</h3>
+                    </div>
+                    <div class="desc"><span>베이커리 온라인 시연회 10차!-김태양 제과기능장</span></div>
+                  </div>
+                </a>
               </li>
             </ul>
+          </div>
+          <div class="nav">
+            <button class="prev"><span class="material-icons"> chevron_left </span></button>
+            <button class="next"><span class="material-icons"> chevron_right </span></button>
+          </div>
+          <div class="pagination">
+            <span class="page"></span>
+              <span class="slash"></span>
+              <span class="pageAll"></span>
           </div>
         </div>
       </div>
@@ -518,7 +532,7 @@
     </footer>
     <!-- js안먹음 -->
     <script>
-      new Swiper(".swiper", {
+      new Swiper(".container", {
         effect: "fade", //slide, fade, cube, coverflow, card
         speed: 1000,
         loop: true,
@@ -537,18 +551,25 @@
         },
       });
 
-      new Swiper("#swiper", {
-        effect: "fade", //slide, fade, cube, coverflow, card
+      new Swiper(".search", {
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
         speed: 1000,
         loop: true,
         navigation: {
-          nextEl: "#news .next",
-          prevEl: "#newx .prev",
+          nextEl: "#new .next",
+          prevEl: "#new .prev",
         },
         autoplay: {
           delay: 3000,
           disableOnInteraction: false,
+          pauseOnMouseEnter: true,
         },
+        pagination: {
+          currentClass
+        }
       });
 
       const medicine = document.querySelector("#medicine");

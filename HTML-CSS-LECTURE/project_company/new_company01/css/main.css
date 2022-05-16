@@ -36,7 +36,7 @@
 
 #mainVisual .btns .prev::before { content: "\e5cb"; font-family: "Material icons"; font-size: 24px; color: #b9babb; position: absolute; top: 50%; transform: translateY(-50%); left: 20%; }
 
-#mainVisual .btns .prev::after { content: "\e5cb"; font-family: "Material icons"; font-size: 24px; color: #fff; position: fixed; top: 556px; left: 110px; display: none; }
+#mainVisual .btns .prev::after { content: "\e5cb"; font-family: "Material icons"; font-size: 24px; color: #fff; position: absolute; top: 50%; transform: translateY(-50%); left: 20%; display: none; }
 
 #mainVisual .btns .prev:hover { width: 100px; border: 2px solid #fff; }
 
@@ -48,11 +48,11 @@
 
 #mainVisual .btns .next { position: absolute; top: 50%; right: 100px; z-index: 100; border: 2px solid #9a9a9d; width: 45px; height: 45px; border-radius: 50px; background: none; transition: all 0.25s ease-in-out; }
 
-#mainVisual .btns .next span { font-size: 12px; font-weight: 700; color: #fff; top: 50%; right: 50%; transform: translateY(-50%); display: none; position: absolute; }
+#mainVisual .btns .next span { font-size: 12px; font-weight: 700; color: #fff; top: 50%; right: 50%; transform: translateY(-50%); display: none; position: absolute; background: none; }
 
 #mainVisual .btns .next::before { content: "\e5cc"; font-family: "Material icons"; font-size: 24px; color: #b9babb; position: absolute; top: 50%; transform: translateY(-50%); left: 20%; }
 
-#mainVisual .btns .next::after { content: "\e5cc"; font-family: "Material icons"; font-size: 24px; color: #fff; position: fixed; top: 556px; right: 110px; display: none; }
+#mainVisual .btns .next::after { content: "\e5cc"; font-family: "Material icons"; font-size: 24px; color: #fff; position: absolute; top: 50%; transform: translateY(-50%); right: 10%; display: none; }
 
 #mainVisual .btns .next:hover { width: 100px; border: 2px solid #fff; }
 
@@ -62,31 +62,51 @@
 
 #mainVisual .btns .next:hover::after { display: block; }
 
-#mainVisual .pagination { position: absolute; bottom: 100px; text-align: center; z-index: 100; }
+#mainVisual .pagination { position: absolute; bottom: 10%; text-align: center; z-index: 100; }
+
+#mainVisual .pagination .swiper-pagination-bullet { width: 40px; height: 8px; border-radius: 50px; background-color: #fff; }
 
 #update .containerAll { margin-top: 100px; margin-bottom: 130px; }
 
 #update .containerAll .titleNav { display: flex; justify-content: space-between; position: relative; margin-bottom: 50px; }
 
-#update .containerAll .titleNav .nav { position: absolute; bottom: 0; right: 0; display: flex; align-items: center; }
+#new { position: relative; }
 
-#update .containerAll .titleNav .nav button { background: none; border: none; color: #ccc; }
+#new .search { transition: background-color 0.5s ease-in-out; }
 
-#update .containerAll .titleNav .nav button:hover { color: #000; }
+#new .search:hover:before { background-color: #000; }
 
-#update .containerAll .titleNav .nav .material-icons { font-size: 40px; font-weight: 100; }
+#new .search::before { content: ""; border: 3px solid #000; display: block; width: 1300px; height: 110px; top: 0; left: 0; box-sizing: border-box; border-radius: 120px; z-index: 0; pointer-events: none; }
 
-#swiper .search ul li .searchBar a { padding: 48px 20px; display: block; border: 3px solid #000; box-sizing: border-box; border-radius: 120px; transition: background-color 0.25s ease-in-out; }
+#new .search::after { content: "\f1df"; font-family: "Material Icons"; font-size: 35px; position: absolute; right: 50px; top: 50%; transform: translateY(-50%); }
 
-#swiper .search ul li .searchBar a:hover { color: #fff; border: 2px solid #fff; background-color: #000; }
+#new .search ul { position: absolute; top: 40%; display: flex; }
 
-#swiper .search ul li .searchBar a h3 { display: inline-block; font-size: 18px; font-weight: 500; padding: 0 100px 0 50px; }
+#new .search ul:hover { color: #fff; }
 
-#swiper .search ul li .searchBar a span { font-size: 18px; padding-left: 30px; position: relative; }
+#new .search ul li a { position: absolute; top: -46px; width: 1300px; height: 110px; display: block; box-sizing: border-box; border-radius: 120px; display: flex; align-items: center; }
 
-#swiper .search ul li .searchBar a span::before { content: ""; display: block; height: 18px; width: 1px; background-color: #ccc; position: absolute; left: 0; top: 2px; }
+#new .search ul li a::after { content: "\f1df"; font-family: "Material Icons"; font-size: 35px; position: absolute; right: 50px; top: 39px; color: #fff; opacity: 0; transition: all 0.3s cubic-bezier(0, 0, 0.2, 1); }
 
-#swiper .search ul li .searchBar a span::after { content: "\f1df"; font-family: "Material Icons"; font-size: 35px; position: absolute; left: 1000px; top: 50%; transform: translateY(-50%); }
+#new .search ul li a:hover:after { opacity: 1; animation-name: arrowAnimation; animation-duration: 0.3s; animation-iteration-count: 1; }
+
+#new .search ul li a .textBox { display: flex; justify-content: space-between; }
+
+#new .search ul li a .textBox .title { width: 300px; text-align: right; text-align: left; }
+
+#new .search ul li a .textBox .title h3 { font-size: 22px; font-weight: 700; margin-left: 70px; }
+
+#new .search ul li a .textBox .desc { width: 1000px; }
+
+#new .search ul li a .textBox .desc span { font-size: 22px; padding-left: 30px; position: relative; }
+
+#new .search ul li a .textBox .desc span::before { content: ""; display: block; height: 18px; width: 1px; background-color: #ccc; position: absolute; left: 0; top: 2px; }
+
+button { position: absolute; right: 0; top: -100px; background: none; border: none; }
+
+button.prev { right: 120px; }
+
+button .material-icons { font-size: 40px; font-weight: 100; color: #ccc; }
 
 #business { background-color: #f9f9f9; }
 
@@ -259,3 +279,7 @@
 #newsSns .containerAll .inner #sns .snsMain .snsList .material-icons { font-size: 30px; border: 1px solid #b9babb; color: #9a9a9d; padding: 13px; border-radius: 30px; }
 
 #newsSns .containerAll .inner #sns .snsMain .snsList .material-icons:hover { border-color: #000; background-color: #000; color: #fff; }
+
+@keyframes arrowAnimation { 0% { transform: translateX(30px); }
+  50% { transform: translateX(20px); }
+  100% { transform: translateX(-20px); } }

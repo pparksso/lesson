@@ -135,7 +135,8 @@ a {
             opacity: 0;
             white-space: nowrap;
             transition: opacity 0.1s ease-in-out;
-            z-index: 200;
+            position: relative;
+            z-index: 99;
             & > li:hover {
               color: #fff;
             }
@@ -149,7 +150,7 @@ a {
     }
   }
 }
-// 지구 depth02 화면에 가림 왜지??
+// 헤더 완성!!!
 #footer {
   background-color: #000;
   .containerAll {
