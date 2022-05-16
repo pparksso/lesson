@@ -72,7 +72,7 @@ a { text-decoration: none; color: inherit; }
 
 #footer .containerAll .inner .footerRight .infoWrap .richwood:active::after { transform: rotate(180deg); }
 
-#footer .containerAll .inner .footerRight .infoWrap .info { color: #695c51; display: flex; flex-direction: column; line-height: 2; margin-top: 20px; }
+#footer .containerAll .inner .footerRight .infoWrap .info { color: #695c51; display: flex; flex-direction: column; line-height: 2; margin-top: 20px; display: none; }
 
 #footer .containerAll .inner .footerRight .infoWrap .info.infoOpen { display: block; }
 

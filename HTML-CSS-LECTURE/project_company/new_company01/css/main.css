@@ -102,6 +102,10 @@
 
 #new .search ul li a .textBox .desc span::before { content: ""; display: block; height: 18px; width: 1px; background-color: #ccc; position: absolute; left: 0; top: 2px; }
 
+#new .pagination { color: #9a9a9d; position: absolute; width: auto; top: -90px; left: 1170px; font-size: 24px; font-weight: 500; }
+
+#new .pagination span { padding: 0 10px; }
+
 button { position: absolute; right: 0; top: -100px; background: none; border: none; }
 
 button.prev { right: 120px; }
@@ -120,11 +124,15 @@ button .material-icons { font-size: 40px; font-weight: 100; color: #ccc; }
 
 #business .containerAll .inner .titleBox .tradeTitle h2 { font-size: 55px; color: #d6000e; margin-bottom: 50px; }
 
+#business .containerAll .inner .titleBox .medicineTitle:active { color: #2d5ffd; }
+
+#business .containerAll .inner .titleBox .medicineTitle:active:before { color: #2d5ffd; }
+
 #business .containerAll .inner .titleBox .medicineTitle::before { content: ""; display: block; width: 9px; height: 9px; border-radius: 18px; background-color: #ccc; position: absolute; top: -40px; left: 340px; }
 
 #business .containerAll .inner .titleBox .medicineTitle h2 { font-size: 55px; color: #ccc; margin-bottom: 50px; }
 
-#business .containerAll .inner .pannel { position: relative; }
+#business .containerAll .inner .pannel { display: flex; }
 
 #business .containerAll .inner .pannel #trading.on { display: block; }
 
@@ -154,7 +162,7 @@ button .material-icons { font-size: 40px; font-weight: 100; color: #ccc; }
 
 #business .containerAll .inner .pannel #trading .link .list li .letter { position: absolute; color: #fff; font-weight: 700; top: 45%; left: 10%; text-align: left; line-height: 1.5; font-size: 22px; }
 
-#business .containerAll .inner .pannel #medicine { display: none; position: absolute; }
+#business .containerAll .inner .pannel #medicine { display: none; }
 
 #business .containerAll .inner .pannel #medicine.on { display: block; }
 
@@ -202,7 +210,7 @@ button .material-icons { font-size: 40px; font-weight: 100; color: #ccc; }
 
 #recommend .containerAll .inner .bar .list .selectBar span { font-weight: 700; font-size: 17px; }
 
-#recommend .containerAll .inner .bar .list .selectList { position: absolute; z-index: 99; border: 2px solid #000; width: 220px; height: 210px; border-radius: 0 0 50px 50px; border-top: none; }
+#recommend .containerAll .inner .bar .list .selectList { display: none; position: absolute; z-index: 99; border: 2px solid #000; width: 220px; height: 210px; border-radius: 0 0 50px 50px; border-top: none; }
 
 #recommend .containerAll .inner .bar .list .selectList.open { display: block; }
 
@@ -218,7 +226,7 @@ button .material-icons { font-size: 40px; font-weight: 100; color: #ccc; }
 
 #recommend .containerAll .inner .bar .textBox input { background: none; border: none; font-size: 17px; width: 100%; outline: none; font-weight: 500; }
 
-#recommend .containerAll .inner .bar .search button { width: 180px; height: 70px; background-color: #000; box-sizing: border-box; border-radius: 0 100px 100px 0; }
+#recommend .containerAll .inner .bar .search button { width: 180px; height: 70px; background-color: #000; box-sizing: border-box; top: 0; border-radius: 0 100px 100px 0; }
 
 #recommend .containerAll .inner .bar .search button span { font-size: 17px; font-weight: 700; color: #fff; }
 

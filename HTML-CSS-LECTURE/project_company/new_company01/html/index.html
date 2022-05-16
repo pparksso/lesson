@@ -216,17 +216,13 @@
           </div>
           <div class="nav">
             <button class="prev"><span class="material-icons"> chevron_left </span></button>
+            <div class="pagination"></div>
             <button class="next"><span class="material-icons"> chevron_right </span></button>
-          </div>
-          <div class="pagination">
-            <span class="page"></span>
-              <span class="slash"></span>
-              <span class="pageAll"></span>
           </div>
         </div>
       </div>
     </section>
-    <!-- swiper 미완성, 슬래쉬 폰트 못찾음 -->
+    <!-- update end -->
     <section id="business">
       <div class="containerAll">
         <div class="inner">
@@ -568,8 +564,9 @@
           pauseOnMouseEnter: true,
         },
         pagination: {
-          currentClass
-        }
+          el: ".nav .pagination",
+          type: "fraction",
+        },
       });
 
       const medicine = document.querySelector("#medicine");
@@ -577,27 +574,41 @@
       const tradeTitle = document.querySelector("#business .tradeTitle");
       const medicineTitle = document.querySelector("#business .medicineTitle");
 
-      tradeTitle.addEventListener("click", function () {
-        medicine.classList.add("off");
-        medicine.classList.remove("on"), trading.classList.add("on"), trading.classList.remove("off");
+      tradeTitle.addEventListener("click", () => {
+        (trading.style.display = "block"), (medicine.style.display = "none");
       });
-      medicineTitle.addEventListener("click", function () {
-        medicine.classList.add("on"), medicine.classList.remove("off"), trading.classList.add("off"), trading.classList.remove("on");
+      medicineTitle.addEventListener("click", () => {
+        (trading.style.display = "none"), (medicine.style.display = "block");
       });
+
+      // tradeTitle.addEventListener("click", () => {
+      //   medicine.classList.add("off"), medicine.classList.remove("on"), trading.classList.add("on"), trading.classList.remove("off");
+      // });
+      // medicineTitle.addEventListener("click", () => {
+      //   medicine.classList.add("on"), medicine.classList.remove("off"), trading.classList.add("off"), trading.classList.remove("on");
+      // });
 
       const listOpen = document.querySelector(".selectList");
       const bar = document.querySelector("selectBar");
-
-      bar.addEventListener("click", function () {
-        listOpen.classList.add("open"), bar.classList.add("open");
-      });
+      function select() {
+        if (listOpen.style.display == "none") {
+          listOpen.style.display = "block";
+        } else {
+          listOpen.style.display = "none";
+        }
+      }
+      bar.addEventListener("click", select);
 
       const richwood = document.querySelector(".richwood");
-      const info = document.querySelector(".info");
-
-      richwood.addEventListener("click", function () {
-        info.classList.add("infoOpen");
-      });
+      function infoWrapOpen() {
+        const info = document.querySelector(".info");
+        if (info.style.display == "none") {
+          info.style.display = "block";
+        } else {
+          info.style.display = "none";
+        }
+      }
+      richwood.addEventListener("click", infoWrapOpen);
     </script>
   </body>
 </html>
