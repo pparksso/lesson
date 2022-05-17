@@ -353,7 +353,7 @@
         </div>
       </div>
     </section>
-    <!-- JS 안먹음, 컨테이너 밑 여백 처리, 제약사업 백그라운드 넣는 방법 -->
+    <!-- business end -->
     <section id="recommend">
       <div class="containerAll">
         <div class="title">
@@ -401,7 +401,7 @@
         </div>
       </div>
     </section>
-    <!-- js 안먹음 -->
+
     <section id="newsSns">
       <div class="containerAll">
         <div class="inner">
@@ -528,7 +528,7 @@
     </footer>
     <!-- js안먹음 -->
     <script>
-      new Swiper(".container", {
+      new Swiper("#mainVisual .container", {
         effect: "fade", //slide, fade, cube, coverflow, card
         speed: 1000,
         loop: true,
@@ -547,7 +547,7 @@
         },
       });
 
-      new Swiper(".search", {
+      new Swiper("#update .search", {
         effect: "fade",
         fadeEffect: {
           crossFade: true,
@@ -575,32 +575,44 @@
       const medicineTitle = document.querySelector("#business .medicineTitle");
 
       tradeTitle.addEventListener("click", () => {
-        (trading.style.display = "block"), (medicine.style.display = "none");
+        event.preventDefault();
+        medicine.classList.add("off"),
+          medicine.classList.remove("on"),
+          trading.classList.add("on"),
+          trading.classList.remove("off"),
+          tradeTitle.classList.add("red"),
+          tradeTitle.classList.remove("gray"),
+          medicineTitle.classList.add("gray"),
+          medicineTitle.classList.remove("blue");
       });
       medicineTitle.addEventListener("click", () => {
-        (trading.style.display = "none"), (medicine.style.display = "block");
+        event.preventDefault();
+        medicine.classList.add("on"),
+          medicine.classList.remove("off"),
+          trading.classList.add("off"),
+          trading.classList.remove("on"),
+          tradeTitle.classList.add("gray"),
+          tradeTitle.classList.remove("red"),
+          medicineTitle.classList.add("blue"),
+          medicineTitle.classList.remove("gray");
       });
 
-      // tradeTitle.addEventListener("click", () => {
-      //   medicine.classList.add("off"), medicine.classList.remove("on"), trading.classList.add("on"), trading.classList.remove("off");
-      // });
-      // medicineTitle.addEventListener("click", () => {
-      //   medicine.classList.add("on"), medicine.classList.remove("off"), trading.classList.add("off"), trading.classList.remove("on");
-      // });
-
       const listOpen = document.querySelector(".selectList");
-      const bar = document.querySelector("selectBar");
+      const bar = document.querySelector(".selectBar");
       function select() {
+        event.preventDefault();
         if (listOpen.style.display == "none") {
-          listOpen.style.display = "block";
+          (listOpen.style.display = "block"), bar.classList.add("open");
         } else {
-          listOpen.style.display = "none";
+          (listOpen.style.display = "none"), bar.classList.remove("open");
         }
       }
+
       bar.addEventListener("click", select);
 
       const richwood = document.querySelector(".richwood");
       function infoWrapOpen() {
+        event.preventDefault();
         const info = document.querySelector(".info");
         if (info.style.display == "none") {
           info.style.display = "block";

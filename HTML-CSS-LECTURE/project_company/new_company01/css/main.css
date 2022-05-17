@@ -120,13 +120,25 @@ button .material-icons { font-size: 40px; font-weight: 100; color: #ccc; }
 
 #business .containerAll .inner .titleBox .tradeTitle { margin-right: 40px; }
 
+#business .containerAll .inner .titleBox .tradeTitle.red h2 { color: #d6000e; }
+
+#business .containerAll .inner .titleBox .tradeTitle.red h2 ::before { color: #d6000e; }
+
+#business .containerAll .inner .titleBox .tradeTitle.gray h2 { color: #ccc; }
+
+#business .containerAll .inner .titleBox .tradeTitle.gray h2 ::before { color: #ccc; }
+
 #business .containerAll .inner .titleBox .tradeTitle:before { content: ""; display: block; width: 9px; height: 9px; border-radius: 18px; background-color: #d6000e; position: absolute; top: -40px; left: 99px; }
 
 #business .containerAll .inner .titleBox .tradeTitle h2 { font-size: 55px; color: #d6000e; margin-bottom: 50px; }
 
-#business .containerAll .inner .titleBox .medicineTitle:active { color: #2d5ffd; }
+#business .containerAll .inner .titleBox .medicineTitle.blue h2 { color: #2d5ffd; }
 
-#business .containerAll .inner .titleBox .medicineTitle:active:before { color: #2d5ffd; }
+#business .containerAll .inner .titleBox .medicineTitle.blue h2 ::before { color: #2d5ffd; }
+
+#business .containerAll .inner .titleBox .medicineTitle.gray h2 { color: #ccc; }
+
+#business .containerAll .inner .titleBox .medicineTitle.gray h2 ::before { color: #ccc; }
 
 #business .containerAll .inner .titleBox .medicineTitle::before { content: ""; display: block; width: 9px; height: 9px; border-radius: 18px; background-color: #ccc; position: absolute; top: -40px; left: 340px; }
 
@@ -200,13 +212,15 @@ button .material-icons { font-size: 40px; font-weight: 100; color: #ccc; }
 
 #recommend .containerAll .inner .bar { display: flex; }
 
-#recommend .containerAll .inner .bar .list .selectBar { border: 2px solid #dedede; width: 140px; height: 70px; border-radius: 100px; display: block; display: flex; margin-right: 20px; justify-content: space-between; align-items: center; padding: 0 40px; transition: all 0.25s ease-in-out; }
+#recommend .containerAll .inner .bar .list .selectBar { border: 2px solid #dedede; width: 140px; height: 70px; border-radius: 45px 45px 45px 45px; display: block; display: flex; margin-right: 20px; justify-content: space-between; align-items: center; padding: 0 40px; transition: border-color 0.25s ease-in-out; }
 
 #recommend .containerAll .inner .bar .list .selectBar:hover { border-color: #000; }
 
 #recommend .containerAll .inner .bar .list .selectBar::after { content: "\e5cf"; font-family: "Material Icons"; font-weight: 500; font-size: 30px; }
 
-#recommend .containerAll .inner .bar .list .selectBar.open { border-color: #000; border-bottom: none; }
+#recommend .containerAll .inner .bar .list .selectBar:active:after { transform: rotate(-180deg); }
+
+#recommend .containerAll .inner .bar .list .selectBar.open { border-color: #000; border-bottom: none; border-radius: 45px 45px 0 0; }
 
 #recommend .containerAll .inner .bar .list .selectBar span { font-weight: 700; font-size: 17px; }
 
