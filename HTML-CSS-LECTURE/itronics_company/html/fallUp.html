@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ITRONICS</title>
+    <link rel="shortcut icon" href="../images/common/ico_itronics.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/fallUp.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+
+    <script src="../js/swiper-bundle.min.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <h1 id="logo">
+        <a href=""><img src="../images/common/logo-b.svg" alt="itronics" /></a>
+      </h1>
+      <nav id="gnb">
+        <h2 class="blind">gnb</h2>
+        <ul class="list">
+          <li>
+            <a href="" class="depth01">ABOUT</a>
+            <ul class="depth02">
+              <li><a href="">회사소개</a></li>
+              <li><a href="">연혁</a></li>
+              <li><a href="">오시는 길</a></li>
+              <li><a href="">CI 소개</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="" class="depth01">BUSINESS</a>
+            <ul class="depth02">
+              <li><a href="">C-ITS</a></li>
+              <li><a href="">B2C 서비스</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="" class="depth01">PRODUCTS</a>
+            <ul class="depth02">
+              <li><a href="">블랙박스</a></li>
+              <li><a href="">하이패스</a></li>
+              <li><a href="">애프터블로우</a></li>
+              <li><a href="">기타 제품</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="" class="depth01">PR CENTER</a>
+            <ul class="depth02">
+              <li><a href="">News</a></li>
+              <li><a href="">IR 자료</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="" class="depth01">CS CENTER</a>
+            <ul class="depth02">
+              <li><a href="">공지사항</a></li>
+              <li><a href="">정품등록</a></li>
+              <li><a href="">문의하기</a></li>
+            </ul>
+          </li>
+          <li><a href="" class="depth01 store">store</a></li>
+        </ul>
+      </nav>
+      <a href="" class="login">login</a>
+    </header>
+    <!-- header end -->
+
+    <script>
+      // 내장객체
+      // 행위,행동,기능
+      const gnb = document.querySelector("#gnb");
+      const header = document.querySelector("#header");
+      gnb.addEventListener("mouseenter", function () {
+        header.classList.add("on");
+      });
+      header.addEventListener("mouseleave", function () {
+        header.classList.remove("on");
+      });
+
+      window.addEventListener("scroll", function () {
+        //console.log("나는 스크롤중", window.scrollY);
+        //window.scrollY  0이면 제일 꼭대기에 도달했다. 그렇지 않으면 scroll이 아래로 내려가는 중이다.
+        if (window.scrollY > 0) {
+          header.classList.add("scroll");
+        } else {
+          header.classList.remove("scroll");
+        }
+      });
+
+      const scrollBar = document.querySelector("#scrollBar");
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 500) {
+          scrollBar.classList.add("scrollOn");
+        } else {
+          scrollBar.classList.remove("scrollOn");
+        }
+      });
+    </script>
+  </body>
+</html>

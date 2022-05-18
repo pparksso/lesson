@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14" height="24" viewBox="0 0 14 24">
+    <defs>
+        <clipPath id="7cjtcqxfja">
+            <path data-name="사각형 644" transform="translate(14 8.527)" style="fill:#fff;stroke:#707070" d="M0 0h14v24H0z"/>
+        </clipPath>
+    </defs>
+    <g data-name="itronics_icon" transform="translate(-14 -8.527)" style="clip-path:url(#7cjtcqxfja)">
+        <path data-name="패스 68" d="M17.57 1.131h-4.291a.26.26 0 0 0-.26.26v4.982a.158.158 0 0 0 .233.139l4.38-2.646a.375.375 0 0 0 .2-.331V1.391a.26.26 0 0 0-.26-.26" transform="translate(6.104 8.396)" style="fill:#ea6000"/>
+        <path data-name="패스 70" d="M7.7 17.516.123 22.053a.223.223 0 0 0-.123.184v.112a.161.161 0 0 0 .161.161h2.963V35h2.73a2.08 2.08 0 0 0 2.08-2.08V17.658a.161.161 0 0 0-.237-.142" transform="translate(16 -4.042)" style="fill:#000e11"/>
+    </g>
+</svg>
