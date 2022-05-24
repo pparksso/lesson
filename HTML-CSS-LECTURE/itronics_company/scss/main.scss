@@ -68,6 +68,9 @@
       font-size: $font-large;
       line-height: 1.5;
       margin-top: 30px;
+      span {
+        display: inline-block;
+      }
     }
   }
 }
@@ -114,4 +117,155 @@
 }
 .btns {
   color: #ddd;
+}
+#product {
+  display: flex;
+  overflow: hidden;
+  .bg {
+    min-height: 100vh;
+    width: 50%;
+    background: {
+      size: cover;
+      image: url("../images/main/bg_product.jpg");
+    }
+  }
+  .contentsBox {
+    overflow: hidden;
+    width: 50%;
+    min-height: 100vh;
+    padding: 150px 0 0 5vw;
+    box-sizing: border-box;
+    .titleBox {
+      margin-bottom: 100px;
+      .title {
+        font-size: $font-large;
+        font-weight: 700;
+        line-height: 1.25;
+        margin-top: 50px;
+      }
+    }
+    .rolling {
+      overflow: hidden;
+      li {
+        width: 200px;
+        text-align: center;
+        a {
+          img {
+            width: 200px;
+          }
+          p {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+    .navigation {
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      a {
+        margin-left: 30px;
+      }
+      button {
+        width: 70px;
+        height: 70px;
+        border: 1px solid #ccc;
+        border-radius: 100%;
+        background: none;
+        font-size: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+        &.prev::before {
+          @include icon("\e5cb", 0);
+          vertical-align: top;
+        }
+        &.next::before {
+          @include icon("\e5cc", 0);
+          vertical-align: top;
+        }
+      }
+    }
+  }
+}
+#make {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  .textBox {
+    .title {
+      font-size: $font-large;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+    p {
+      line-height: 1.5;
+      color: #777;
+      margin-bottom: 30px;
+    }
+  }
+  img {
+    width: 70vw;
+  }
+}
+#news {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 200px;
+  .title {
+    font-size: $font-large;
+    line-height: 1.2;
+    margin-bottom: 50px;
+  }
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 80px;
+    font-weight: 700;
+    li {
+      margin-left: 50px;
+    }
+  }
+  .contents {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      flex-basis: calc(25% - 20px);
+
+      .dateBox {
+        margin-bottom: 30px;
+        span {
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+      }
+      .date {
+        font-weight: 400;
+        color: #ccc;
+        position: relative;
+        padding-left: 10px;
+        margin-left: 10px;
+        &::before {
+          @include pseudo;
+          @include box(1px, 10px, #333);
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+    .txt {
+      font-size: $font-medium;
+      font-weight: 500;
+      @include multiEllipsis(2, 1);
+      margin-bottom: 50px;
+    }
+  }
 }

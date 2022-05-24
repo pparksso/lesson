@@ -76,3 +76,9 @@
   height: $h;
   background-color: $bg;
 }
+@mixin icon($code, $margin: 10px) {
+  font-family: "Material Icons";
+  content: $code;
+  display: inline-block;
+  margin-left: $margin;
+}

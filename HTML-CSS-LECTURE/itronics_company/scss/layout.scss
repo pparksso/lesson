@@ -5,6 +5,7 @@ body {
   font-family: "Roboto", "Noto Sans KR", sans-serif;
   font-size: $font-normal;
   color: $font-color;
+  // min-height: 5000px;
 }
 a {
   color: inherit;
@@ -127,8 +128,64 @@ a {
     }
   }
 }
+#footer {
+  padding: 50px 50px;
+  display: flex;
+  .addressBox {
+    margin-left: 150px;
+    .customer {
+      display: flex;
+      font-size: $font-medium - 4px;
+      font-weight: 500;
+      margin-bottom: 30px;
+      dl {
+        display: flex;
+        margin-right: 50px;
+      }
+    }
+    address {
+      margin-bottom: 30px;
+      p {
+        margin-bottom: 10px;
+        span {
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .utilMenu {
+      ul {
+        display: flex;
+        li {
+          margin-right: 15px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+    .copyright {
+      color: #999;
+    }
+  }
+  .familySite {
+    margin-left: auto;
+    select {
+      height: 50px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 0 80px 0 20px;
+      appearance: none;
+      outline: none;
+      background: {
+        image: url("../images/common/expand_more.svg");
+        position: right 10px top 50%;
+        size: 20px;
+        repeat: no-repeat;
+      }
+    }
+  }
+}
 #scrollBar {
   position: fixed;
+  z-index: 99;
   right: 30px;
   bottom: 0;
   font-size: 20px;
@@ -147,6 +204,7 @@ a {
       border-radius: 100%;
       background-color: #f77015;
       margin-bottom: 20px;
+
       &:after {
         content: "\e145";
         font-family: "Material Icons";
@@ -162,6 +220,7 @@ a {
       border-radius: 100%;
       background-color: #fff;
       margin-bottom: 20px;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.15);
       &:after {
         content: "\f1e0";
         font-family: "Material Icons";
