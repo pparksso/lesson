@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>지폐계산기</title>
+    <!-- reset -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+  </head>
+  <body>
+    <header id="header">
+      <h1>Money <strong>Remain</strong></h1>
+    </header>
+
+    <div class="moneyCalc">
+      <input type="number" name="" id="money" step="10" max="10000000" min="10000" placeholder="금액을 입력해주세요. ex)345670" />
+      <button>계산하기</button>
+      <div class="result">
+        <ul>
+          <li>
+            <dl>
+              <dt>오만원</dt>
+              <dd id="money50000">0</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>만원</dt>
+              <dd id="money10000">0</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>오천원</dt>
+              <dd id="money5000">0</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>천원</dt>
+              <dd id="money1000">0</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>오백원</dt>
+              <dd id="money500">0</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>백원</dt>
+              <dd id="money100">0</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>오십원</dt>
+              <dd id="money50">0</dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dt>십원</dt>
+              <dd id="money10">0</dd>
+            </dl>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const money = document.querySelector("#money");
+      const btn = document.querySelector(".moneyCalc button");
+      const money50000 = document.querySelector("#money50000");
+      const money10000 = document.querySelector("#money10000");
+      const money5000 = document.querySelector("#money5000");
+      const money1000 = document.querySelector("#money1000");
+      const money500 = document.querySelector("#money500");
+      const money100 = document.querySelector("#money100");
+      const money50 = document.querySelector("#money50");
+      const money10 = document.querySelector("#money10");
+
+      btn.addEventListener("click", function () {
+        const tempMoney = parseInt(money.value);
+        money50000.textContent = parseInt(tempMoney / 50000);
+        money10000.textContent = parseInt((tempMoney % 50000) / 10000);
+        money5000.textContent = parseInt((tempMoney % 10000) / 5000);
+        money1000.textContent = parseInt((tempMoney % 5000) / 1000);
+        money500.textContent = parseInt((tempMoney % 1000) / 500);
+        money100.textContent = parseInt((tempMoney % 500) / 100);
+        money50.textContent = parseInt((tempMoney % 100) / 50);
+        money10.textContent = parseInt((tempMoney % 50) / 10);
+      });
+    </script>
+  </body>
+</html>

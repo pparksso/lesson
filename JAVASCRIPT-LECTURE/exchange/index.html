@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>환율계산기</title>
+    <!-- reset -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+  </head>
+  <body>
+    <header id="header">
+      <img src="image/layout/united-states.png" alt="" class="america" />
+      <h1>환율계산기</h1>
+      <img src="image/layout/south-korea.png" alt="" class="korea" />
+    </header>
+    <div id="exchange">
+      <div class="inner">
+        <div class="main">
+          <img src="image/contents/graph.png" alt="" class="graph" />
+          <div class="calculator">
+            <div class="wonCalculator mainRight">
+              <input type="number" name="" id="wonNumber" placeholder="won" min="1000" max="10000000000" step="1000" />
+              <button class="wonCalcBtn">원<span class="material-icons"> arrow_forward </span> 달러</button>
+            </div>
+            <div class="dollarCalculator mainRight">
+              <input type="number" name="" id="dollarNumber" placeholder="dollar" min="1" max="10000000000" step="1000" />
+              <button class="dollarCalcBtn">달러<span class="material-icons"> arrow_forward </span> 원</button>
+            </div>
+          </div>
+        </div>
+        <div class="inner">
+          <div class="today">
+            <p>1 달러 = <strong>1,238.50</strong>원</p>
+          </div>
+          <div class="result">
+            <dl>
+              <dt>미국 USD</dt>
+              <dd class="dollar"></dd>
+            </dl>
+            <dl>
+              <dt>대한민국 KRW</dt>
+              <dd class="won"></dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const wonNumber = document.querySelector("#wonNumber");
+      const dollarNumber = document.querySelector("#dollarNumber");
+      const wonCalcBtn = document.querySelector(".wonCalcBtn");
+      const dollarCalcBtn = document.querySelector(".dollarCalcBtn");
+      const dollar = document.querySelector(".dollar");
+      const won = document.querySelector(".won");
+
+      wonCalcBtn.addEventListener("click", function () {
+        const wonValue = wonNumber.value;
+        won.textContent = wonValue + " 원";
+        dollar.textContent = (wonValue / 1238.5).toFixed(2) + " 달러";
+      });
+      dollarCalcBtn.addEventListener("click", function () {
+        const dollarValue = dollarNumber.value;
+        won.textContent = (dollarValue * 1238.5).toFixed(2) + " 원";
+        dollar.textContent = dollarValue + " 달러";
+      });
+    </script>
+  </body>
+</html>
