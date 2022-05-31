@@ -1,0 +1,93 @@
+@import "vars";
+@import "mixin";
+
+body {
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+  font-size: $font-normal;
+  color: $font-color;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+#header {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #eee;
+  #logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
+  }
+  #gnb {
+    .list {
+      display: flex;
+      li {
+        text-align: center;
+        .depth01 {
+          display: block;
+          line-height: 80px;
+          height: 80px;
+          padding: 0 40px;
+          position: relative;
+
+          &:hover {
+            color: $main-color;
+          }
+          &:not(.store)::after {
+            content: "";
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            z-index: 2;
+            display: block;
+            background-color: $main-color;
+            left: 30px;
+            right: 30px;
+            transform: scaleX(0);
+          }
+          &:hover:after {
+            transition: transform 0.25s ease-in-out;
+            transform: scaleX(1);
+          }
+        }
+        .depth02 {
+          padding: 20px;
+          border-radius: 0 0 10px 10px;
+          > li {
+            padding: 10px 0;
+            &:hover {
+              color: $main-color;
+              background-color: rgb(255, 221, 193);
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+      .store {
+        color: $main-color;
+        position: relative;
+        &:after {
+          content: url("../images/main/ico_link.svg");
+          position: absolute;
+          top: 0;
+          right: 30px;
+        }
+      }
+    }
+  }
+  .login {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 30px;
+  }
+}
