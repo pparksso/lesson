@@ -26,7 +26,6 @@
       <button class="resetBtn">RESET</button>
       <div>
         <div id="result"></div>
-        <div class="clickCounter"></div>
       </div>
     </div>
     <script>
@@ -35,7 +34,6 @@
       const resetBtn = document.querySelector(".resetBtn");
       const userNumber = document.querySelector("#number");
       const result = document.querySelector("#result");
-      const clickCounter = document.querySelector(".clickCounter");
       let count = 0;
 
       calcBtn.addEventListener("click", () => {
@@ -55,12 +53,23 @@
         result.classList.add("on");
       });
 
-      resetBtn.addEventListener("click", function () {
+      resetBtn.addEventListener("click", () => {
         result.textContent = "";
-        userName.value = "";
+        userNumber.value = "";
         result.classList.remove("on");
+        count = 0;
       });
-      console.dir(calcBtn);
+
+      // 삼항연산자로 바꾸기!
+      // calcBtn.addEventListener("click", () => {
+      //   count += 1;
+      //   const value = parseInt(userNumber.value);
+      //   result.innerHTML = randomNumber === value ? `<h1>YOU WIN👏</h1> ${count} click!!` : randomNumber > value ? "<h1>UP</h1>" : "<h1>DOWN</h1>";
+      //   if (isNaN(value)) {
+      //     result.innerHTML = "<h1>숫자를 입력하세요</h1>";
+      //   }
+      //   result.classList.add("on");
+      // });
     </script>
   </body>
 </html>
