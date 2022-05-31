@@ -5,8 +5,7 @@ body {
   font-family: "Roboto", "Noto Sans KR", sans-serif;
   font-size: 16px;
   color: #111;
-  background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, 0, transparent 50px);
-  background-color: rgb(255, 250, 234);
+  background-color: #f1f1f1;
 }
 a {
   color: inherit;
@@ -44,7 +43,9 @@ a {
   width: 100%;
   .inner {
     width: 70%;
-    margin: 50px auto;
+    height: 100%;
+    margin: 0 auto;
+    background-color: rgba(235, 253, 245, 0.2);
     .main {
       display: flex;
       justify-content: center;

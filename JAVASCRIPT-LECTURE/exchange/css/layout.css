@@ -1,4 +1,4 @@
-body { font-family: "Roboto", "Noto Sans KR", sans-serif; font-size: 16px; color: #111; background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, 0, transparent 50px); background-color: #fffaea; }
+body { font-family: "Roboto", "Noto Sans KR", sans-serif; font-size: 16px; color: #111; background-color: #f1f1f1; }
 
 a { color: inherit; text-decoration: none; }
 
@@ -14,7 +14,7 @@ a { color: inherit; text-decoration: none; }
 
 #exchange { width: 100%; }
 
-#exchange .inner { width: 70%; margin: 50px auto; }
+#exchange .inner { width: 70%; height: 100%; margin: 0 auto; background-color: rgba(235, 253, 245, 0.2); }
 
 #exchange .inner .main { display: flex; justify-content: center; }
 
