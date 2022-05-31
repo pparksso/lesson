@@ -20,7 +20,6 @@
     <header id="header">
       <h1>score <strong>Calculator</strong></h1>
     </header>
-
     <div class="scoreCalc">
       <input type="number" name="" id="kor" max="100" min="0" placeholder="국어점수를 입력하세요" />
       <input type="number" name="" id="eng" max="100" min="0" placeholder="영어점수를 입력하세요" />
@@ -40,9 +39,9 @@
       const result = document.querySelector("#result");
 
       calcBtn.addEventListener("click", function () {
-        const korValue = parseInt(korScore.value);
-        const engValue = parseInt(engScore.value);
-        const mathValue = parseInt(mathScore.value);
+        const korValue = isNaN(parseInt(korScore.value)) ? 0 : parseInt(korScore.value);
+        const engValue = isNaN(parseInt(engScore.value)) ? 0 : parseInt(engScore.value);
+        const mathValue = isNaN(parseInt(mathScore.value)) ? 0 : parseInt(mathScore.value);
         const averageScore = (korValue + engValue + mathValue) / 3;
         let score = "";
         if (averageScore >= 90) {
@@ -65,6 +64,7 @@
         korScore.value = "";
         engScore.value = "";
         mathScore.value = "";
+        result.classList.remove("on");
       });
     </script>
   </body>

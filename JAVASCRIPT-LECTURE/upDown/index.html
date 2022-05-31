@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UP&DOWN</title>
+    <!-- reset -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+  </head>
+  <body>
+    <header id="header">
+      <h1>UP <strong>DOWN</strong></h1>
+    </header>
+    <div class="upDownCalc">
+      <input type="number" name="" id="number" max="100" min="0" placeholder="1부터 100까지 생각한 숫자를 입력하세요" />
+      <button class="calcBtn">CLICK👆</button>
+      <button class="resetBtn">RESET</button>
+      <div>
+        <div id="result"></div>
+        <div class="clickCounter"></div>
+      </div>
+    </div>
+    <script>
+      const randomNumber = Math.floor(Math.random() * 99) + 1;
+      const calcBtn = document.querySelector(".calcBtn");
+      const resetBtn = document.querySelector(".resetBtn");
+      const userNumber = document.querySelector("#number");
+      const result = document.querySelector("#result");
+      const clickCounter = document.querySelector(".clickCounter");
+      let count = 0;
+
+      calcBtn.addEventListener("click", () => {
+        count += 1;
+        const value = parseInt(userNumber.value);
+        let answer = "";
+        if (randomNumber > value) {
+          answer = "UP";
+        } else if (randomNumber < value) {
+          answer = "DOWN";
+        } else if (randomNumber == value) {
+          answer = `YOU WIN👏 ${count} click!!`;
+        } else if (isNaN(value)) {
+          answer = "숫자를 입력하세요";
+        }
+        result.innerHTML = `${answer}`;
+        result.classList.add("on");
+      });
+
+      resetBtn.addEventListener("click", function () {
+        result.textContent = "";
+        userName.value = "";
+        result.classList.remove("on");
+      });
+      console.dir(calcBtn);
+    </script>
+  </body>
+</html>
