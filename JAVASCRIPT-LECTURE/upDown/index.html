@@ -29,7 +29,8 @@
       </div>
     </div>
     <script>
-      const randomNumber = Math.floor(Math.random() * 99) + 1;
+      let randomNumber = Math.floor(Math.random() * 99) + 1;
+      console.log("🚀 ~ file: index.html ~ line 33 ~ randomNumber", randomNumber);
       const calcBtn = document.querySelector(".calcBtn");
       const resetBtn = document.querySelector(".resetBtn");
       const userNumber = document.querySelector("#number");
@@ -58,6 +59,7 @@
         userNumber.value = "";
         result.classList.remove("on");
         count = 0;
+        randomNumber = Math.floor(Math.random() * 99) + 1;
       });
 
       // 삼항연산자로 바꾸기!
