@@ -30,7 +30,7 @@
     </div>
     <script>
       let randomNumber = Math.floor(Math.random() * 99) + 1;
-      console.log("🚀 ~ file: index.html ~ line 33 ~ randomNumber", randomNumber);
+      // console.log("🚀 ~ file: index.html ~ line 33 ~ randomNumber", randomNumber);
       const calcBtn = document.querySelector(".calcBtn");
       const resetBtn = document.querySelector(".resetBtn");
       const userNumber = document.querySelector("#number");
@@ -49,6 +49,9 @@
           answer = `YOU WIN👏 ${count} click!!`;
         } else if (isNaN(value)) {
           answer = "숫자를 입력하세요";
+        }
+        if (count > 10) {
+          answer = "YOU LOSE😣";
         }
         result.innerHTML = `${answer}`;
         result.classList.add("on");
