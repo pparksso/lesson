@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>countdown</title>
+    <!-- reset -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+  </head>
+  <body>
+    <header id="header">
+      <h1>Remain <strong>Day</strong></h1>
+    </header>
+    <div class="dayBox">
+      <div class="txt" id="day"><span class="num"></span><span>DAY</span></div>
+      <div class="txt" id="hours"><span class="num"></span><span>HOUR</span></div>
+      <div class="txt" id="mins"><span class="num"></span><span>MIN</span></div>
+      <div class="txt" id="seconds"><span class="num"></span><span>SEC</span></div>
+    </div>
+    <div class="dateBox">
+      <div id="date"></div>
+    </div>
+    <div class="timeBox">
+      <div id="time"></div>
+    </div>
+    <script>
+      function showTime() {
+        const now = new Date();
+        const year = now.getFullYear(); //4자리 연도수
+        const month = now.getMonth(); // 월(0~11)
+        const date = now.getDate(); // 일
+        const day = now.getDay(); //요일(0~6)
+        let tempDay = "";
+        switch (day) {
+          case 0:
+            tempDay = "Sun";
+            break;
+          case 1:
+            tempDay = "Mon";
+            break;
+          case 2:
+            tempDay = "Tue";
+            break;
+          case 3:
+            tempDay = "Wed";
+            break;
+          case 4:
+            tempDay = "Thu";
+            break;
+          case 5:
+            tempDay = "Fri";
+            break;
+          case 6:
+            tempDay = "Sat";
+            break;
+        }
+
+        let tempMonth = "";
+        switch (month) {
+          case 0:
+            tempMonth = "Jan";
+            break;
+          case 1:
+            tempMonth = "Feb";
+            break;
+          case 2:
+            tempMonth = "Mar";
+            break;
+          case 3:
+            tempMonth = "Apr";
+            break;
+          case 4:
+            tempMonth = "May";
+            break;
+          case 5:
+            tempMonth = "Jun";
+            break;
+          case 6:
+            tempMonth = "Jul";
+            break;
+          case 7:
+            tempMonth = "Agu";
+            break;
+          case 8:
+            tempMonth = "Sep";
+            break;
+          case 9:
+            tempMonth = "Oct";
+            break;
+          case 10:
+            tempMonth = "Nov";
+            break;
+          case 11:
+            tempMonth = "Dec";
+            break;
+        }
+        const dateDom = document.querySelector("#date");
+        dateDom.textContent = `${year} / ${tempMonth} / ${date} / ${tempDay}`;
+        const hours = now.getHours();
+        const mins = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        const time = document.querySelector("#time");
+        time.textContent = `${hours < 10 ? "0" + hours : hours} : ${mins < 10 ? "0" + mins : mins} : ${seconds < 10 ? "0" + seconds : seconds}`;
+      }
+      showTime();
+      setInterval(showTime, 1000);
+
+      function countDown(until) {
+        const now = new Date();
+        const endDay = new Date(until);
+        const total = endDay - now;
+        const totalSeconds = Math.floor(total / 1000);
+        const seconds = totalSeconds % 60;
+        const mins = Math.floor(totalSeconds / 60) % 60;
+        const hours = Math.floor(totalSeconds / 60 / 60) % 24;
+        const days = Math.floor(totalSeconds / 60 / 60 / 24);
+
+        const dayDom = document.querySelector("#day .num");
+        const hoursDom = document.querySelector("#hours .num");
+        const minsDom = document.querySelector("#mins .num");
+        const secondsDom = document.querySelector("#seconds .num");
+
+        dayDom.textContent = days;
+        hoursDom.textContent = hours < 10 ? "0" + hours : hours;
+        minsDom.textContent = mins < 10 ? "0" + mins : mins;
+        secondsDom.textContent = seconds < 10 ? "0" + seconds : seconds;
+      }
+      countDown("2022/9/22");
+      setInterval(countDown, 1000, "2022/9/22");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GUGUDAN</title>
+    <!-- reset -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+  </head>
+  <body>
+    <header id="header">
+      <h1><strong>GUGUDAN</strong></h1>
+    </header>
+    <div class="inputBox">
+      <input type="number" id="number" step="1" max="9" min="2" placeholder="출력할 구구단을 입력하시오 ex)5" />
+      <button class="click">클릭</button>
+      <button class="reset">reset</button>
+    </div>
+    <div class="gugudanBox">
+      <table>
+        <!-- <thead>
+          <tr>
+            <th class="num"></th>
+          </tr>
+        </thead> -->
+        <tbody class="body"></tbody>
+      </table>
+    </div>
+    <script>
+      const tbody = document.querySelector(".body");
+      const clickBtn = document.querySelector(".click");
+      const resetBtn = document.querySelector(".reset");
+      const userNumber = document.querySelector("#number");
+
+      clickBtn.addEventListener("click", function () {
+        const gugudan = parseInt(userNumber.value);
+        for (let i = 1; i < 10; i++) {
+          let tempHtml = `<tr>`;
+          for (let j = gugudan; j > 1; j--) {
+            tempHtml += `<td>${j} x ${i} = ${i * j}</td>`;
+          }
+          tempHtml += `</tr>`;
+          tbody.innerHTML += tempHtml;
+        }
+      });
+      resetBtn.addEventListener("click", function () {
+        tbody.innerHTML = "";
+        userNumber.value = "";
+      });
+    </script>
+  </body>
+</html>
