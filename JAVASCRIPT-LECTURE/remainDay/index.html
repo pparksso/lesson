@@ -39,72 +39,73 @@
         const month = now.getMonth(); // 월(0~11)
         const date = now.getDate(); // 일
         const day = now.getDay(); //요일(0~6)
-        let tempDay = "";
-        switch (day) {
-          case 0:
-            tempDay = "Sun";
-            break;
-          case 1:
-            tempDay = "Mon";
-            break;
-          case 2:
-            tempDay = "Tue";
-            break;
-          case 3:
-            tempDay = "Wed";
-            break;
-          case 4:
-            tempDay = "Thu";
-            break;
-          case 5:
-            tempDay = "Fri";
-            break;
-          case 6:
-            tempDay = "Sat";
-            break;
-        }
-
-        let tempMonth = "";
-        switch (month) {
-          case 0:
-            tempMonth = "Jan";
-            break;
-          case 1:
-            tempMonth = "Feb";
-            break;
-          case 2:
-            tempMonth = "Mar";
-            break;
-          case 3:
-            tempMonth = "Apr";
-            break;
-          case 4:
-            tempMonth = "May";
-            break;
-          case 5:
-            tempMonth = "Jun";
-            break;
-          case 6:
-            tempMonth = "Jul";
-            break;
-          case 7:
-            tempMonth = "Agu";
-            break;
-          case 8:
-            tempMonth = "Sep";
-            break;
-          case 9:
-            tempMonth = "Oct";
-            break;
-          case 10:
-            tempMonth = "Nov";
-            break;
-          case 11:
-            tempMonth = "Dec";
-            break;
-        }
+        const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const Monthes = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Agu", "Sep", "Oct", "Nov", "Dec"];
+        // let tempDay = "";
+        // switch (day) {
+        //   case 0:
+        //     tempDay = "Sun";
+        //     break;
+        //   case 1:
+        //     tempDay = "Mon";
+        //     break;
+        //   case 2:
+        //     tempDay = "Tue";
+        //     break;
+        //   case 3:
+        //     tempDay = "Wed";
+        //     break;
+        //   case 4:
+        //     tempDay = "Thu";
+        //     break;
+        //   case 5:
+        //     tempDay = "Fri";
+        //     break;
+        //   case 6:
+        //     tempDay = "Sat";
+        //     break;
+        // }
+        // let tempMonth = "";
+        // switch (month) {
+        //   case 0:
+        //     tempMonth = "Jan";
+        //     break;
+        //   case 1:
+        //     tempMonth = "Feb";
+        //     break;
+        //   case 2:
+        //     tempMonth = "Mar";
+        //     break;
+        //   case 3:
+        //     tempMonth = "Apr";
+        //     break;
+        //   case 4:
+        //     tempMonth = "May";
+        //     break;
+        //   case 5:
+        //     tempMonth = "Jun";
+        //     break;
+        //   case 6:
+        //     tempMonth = "Jul";
+        //     break;
+        //   case 7:
+        //     tempMonth = "Agu";
+        //     break;
+        //   case 8:
+        //     tempMonth = "Sep";
+        //     break;
+        //   case 9:
+        //     tempMonth = "Oct";
+        //     break;
+        //   case 10:
+        //     tempMonth = "Nov";
+        //     break;
+        //   case 11:
+        //     tempMonth = "Dec";
+        //     break;
+        // }
         const dateDom = document.querySelector("#date");
-        dateDom.textContent = `${year} / ${tempMonth} / ${date} / ${tempDay}`;
+        dateDom.textContent = `${year} / ${Monthes[month]} / ${date} / ${days[day]}`;
         const hours = now.getHours();
         const mins = now.getMinutes();
         const seconds = now.getSeconds();
