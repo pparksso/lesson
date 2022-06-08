@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lodash</title>
+    <script src="./js/lodash.js"></script>
+  </head>
+  <body>
+    <script>
+      //lodash
+      const fruits = ["apple", "banana", "melon", "kiwi", "orange", "cherry", "tomato"];
+
+      //_.chunk(배열이름, 갯수) : 순서대로 갯수만큼 잘라서 배열로 반환
+      const newFruits = _.chunk(fruits, 4);
+      // console.log(newFruits);
+
+      // _.difference(배열이름, [요소]) : 선택 요소 이외의 요소를 배열로 반환
+      const fruitsDifference = _.difference(fruits, ["banana", "melon"]);
+      // console.log(fruitsDifference);
+
+      //_.join(배열이름,"넣고싶은 기호?") : 요소 사이 넣고 싶은 기호를 넣어 문자열로 반환, 기호를 안넣으면 ,
+      const fruitsList = _.join(fruits);
+      // console.log(fruitsList);
+    </script>
+  </body>
+</html>

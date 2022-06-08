@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lotto calculator</title>
+    <!-- reset -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- css -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+  </head>
+  <body>
+    <header id="header">
+      <h1><strong>calculator</strong></h1>
+    </header>
+    <div class="inputBox">
+      <input type="number" name="" id="first" />
+      <!-- <input type="text" value="+" /> -->
+      <input type="number" id="second" />
+      <input type="number" value="" id="correct" />
+    </div>
+    <div class="opperators">
+      <button id="plus">＋</button>
+      <button id="minus">－</button>
+      <button id="multiple">×</button>
+      <button id="divide">÷</button>
+    </div>
+    <script>
+      const first = document.querySelector("#first");
+      const second = document.querySelector("#second");
+      const correct = document.querySelector("#correct");
+      const plusBtn = document.querySelector("#plus");
+      const minusBtn = document.querySelector("#minus");
+      const multipleBtn = document.querySelector("#multiple");
+      const divideBtn = document.querySelector("#divide");
+
+      function plus(a, b) {
+        return a + b;
+      }
+      function minus(a, b) {
+        return a - b;
+      }
+      function multiple(a, b) {
+        return a * b;
+      }
+      function divide(a, b) {
+        return a / b;
+      }
+
+      plusBtn.addEventListener("click", function () {
+        let fValue = parseInt(first.value);
+        let sValue = parseInt(second.value);
+        correct.value = plus(fValue, sValue);
+      });
+      minusBtn.addEventListener("click", function () {
+        let fValue = parseInt(first.value);
+        let sValue = parseInt(second.value);
+        correct.value = minus(fValue, sValue);
+      });
+      multipleBtn.addEventListener("click", function () {
+        let fValue = parseInt(first.value);
+        let sValue = parseInt(second.value);
+        correct.value = multiple(fValue, sValue);
+      });
+      divideBtn.addEventListener("click", function () {
+        let fValue = parseInt(first.value);
+        let sValue = parseInt(second.value);
+        correct.value = divide(fValue, sValue);
+      });
+    </script>
+  </body>
+</html>
