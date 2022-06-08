@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROCK-PAPER-SCISSORS</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="css/layout.css" />
+  </head>
+  <body>
+    <header id="header">
+      <h1><strong>ROCK-PAPER-SCISSORS</strong></h1>
+    </header>
+    <div id="com">
+      <ul>
+        <li><img src="images/rock.svg" alt="" /></li>
+        <li><img src="images/paper.svg" alt="" /></li>
+        <li><img src="images/scissors.svg" alt="" /></li>
+      </ul>
+    </div>
+    <div id="player">
+      <ul>
+        <li data-id="0"><img src="images/rock.svg" alt="" /></li>
+        <li data-id="1"><img src="images/paper.svg" alt="" /></li>
+        <li data-id="2"><img src="images/scissors.svg" alt="" /></li>
+      </ul>
+    </div>
+    <div id="result">
+      <ul>
+        <!-- <li class="win">W</li>
+        <li class="lose">L</li>
+        <li class="draw">D</li> -->
+      </ul>
+    </div>
+    <div id="cover">
+      <h1 class="resultTxt"></h1>
+      <h2>To Be Continue~~</h2>
+      <button id="btnRestart">restart game</button>
+    </div>
+    <script>
+      const comItems = document.querySelectorAll("#com ul li");
+      const playerItems = document.querySelectorAll("#player ul li");
+      let result = document.querySelector("#result ul");
+      const cover = document.querySelector("#cover");
+      const btnRestart = document.querySelector("#btnRestart");
+      let resultTxt = document.querySelector("#cover .resultTxt");
+      let allStop = null;
+      let count = 0;
+      let wCount = 0;
+      let lCount = 0;
+      let dCount = 0;
+      let random = 0;
+      const comChoice = function () {
+        random = Math.floor(Math.random() * 3);
+        comItems.forEach(function (item, i) {
+          item.style.display = "none";
+        });
+        comItems[random].style.display = "block";
+      };
+      let stop = setInterval(comChoice, 100);
+      const restart = function () {
+        stop = setInterval(comChoice, 100);
+        playerItems.forEach(function (item) {
+          // item.addEventListener("click", playerChoice);
+          item.classList.remove("not");
+        });
+      };
+      const blocking = function () {
+        playerItems.forEach(function (item) {
+          // item.removeEventListener("click", playerChoice);
+          item.classList.add("not");
+        });
+      };
+
+      const playerChoice = function () {
+        //const로 this.dataset.id를 숫자형으로 바꾼 상수를 하나 만들어서 그걸 대신 대입해두됨!!!
+        if (Number(this.dataset.id) === random) {
+          result.innerHTML += `<li class=draw>D</li>`;
+          dCount++;
+        } else if (Number(this.dataset.id) === 0 && random === 2) {
+          result.innerHTML += `<li class=win>W</li>`;
+          wCount++;
+        } else if (Number(this.dataset.id) === 1 && random === 0) {
+          result.innerHTML += `<li class=win>W</li>`;
+          wCount++;
+        } else if (Number(this.dataset.id) === 2 && random === 1) {
+          result.innerHTML += `<li class=win>W</li>`;
+          wCount++;
+        } else {
+          result.innerHTML += `<li class=lose>L</li>`;
+          lCount++;
+        }
+        blocking();
+        clearInterval(stop);
+        allStop = setTimeout(restart, 1000);
+        count++;
+        if (count >= 3) {
+          clearTimeout(allStop);
+          cover.classList.add("on");
+          if (lCount >= 2) {
+            resultTxt.innerHTML = `you <strong>lose<strong>`;
+          } else if (wCount >= 2) {
+            resultTxt.innerHTML = `you <strong>win<strong>`;
+          } else if (dCount >= 2) {
+            resultTxt.innerHTML = `we <strong>draw<strong>`;
+          } else if (wCount === 1 && lCount === 1 && dCount === 1) {
+            resultTxt.innerHTML = `we <strong>draw<strong>`;
+          }
+        }
+      };
+      const restartGame = function () {
+        cover.classList.remove("on");
+        result.innerHTML = "";
+        count = 0;
+        wCount = 0;
+        lCount = 0;
+        dCount = 0;
+        restart();
+      };
+      playerItems.forEach(function (item) {
+        item.addEventListener("click", playerChoice);
+      });
+      btnRestart.addEventListener("click", restartGame);
+    </script>
+  </body>
+</html>

@@ -55,3 +55,19 @@ const callBack02 = function () {
   console.log("callBack02");
 };
 // setInterval(callBack02, 1000);
+
+function first() {
+  second();
+  console.log("나는 1입니다.");
+}
+function second() {
+  third();
+  console.log("나는 2입니다.");
+}
+function third() {
+  console.log("나는 3입니다.");
+}
+setTimeout(third); //제일 나중에 실행됨
+first();
+// second();
+// third();
