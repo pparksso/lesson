@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WORD-RELAY</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <!-- js -->
+    <script src="./js/greenSock.js/gsap.min.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <h1><strong>WORD-RELAY</strong></h1>
+    </header>
+    <div id="wordList">
+      <ul></ul>
+    </div>
+    <div id="time"></div>
+    <div id="inputBox">
+      <input type="text" placeholder="단어를 입력해주세요" id="inputWord" />
+    </div>
+    <div id="cover">
+      <h1 class="resultTxt"></h1>
+      <h2>To Be Continue~~</h2>
+      <button id="btnRestart">restart game</button>
+    </div>
+    <script>
+      const firstWordArray = ["기러기", "호랑이", "소나무", "기관사"];
+      const wordArray = [];
+      const inputWord = document.querySelector("#inputWord");
+      const wordList = document.querySelector("#wordList ul");
+      let timeBox = document.querySelector("#time");
+      const totalCount = 15;
+      let clearCount = 0;
+      let listCount = 0;
+
+      const countDown = function () {
+        clearCount++;
+        const countNum = totalCount - clearCount;
+        timeBox.innerHTML = `<span>${countNum}</span>`;
+        if (countNum < 0) {
+          timeBox.innerHTML = "";
+          gsap.from("#inputWord", { x: 50, duration: 0.5, ease: "elastic" });
+        }
+      };
+
+      let interval = setInterval(countDown, 1000);
+
+      wordArray.push(firstWordArray[Math.floor(Math.random() * firstWordArray.length)]);
+      timeBox.innerHTML = "";
+      const makeWordList = function () {
+        wordArray.forEach(function (item, index) {
+          wordList.innerHTML += `<li>${item}</li>`;
+        });
+      };
+      makeWordList();
+      const keyUpFunc = function (e) {
+        if (e.keyCode === 13) {
+          clearInterval(interval);
+          timeBox.innerHTML = "";
+          interval = setInterval(countDown, 1000);
+          clearCount = 0;
+          const inputWordValue = inputWord.value;
+          const firstChar = inputWordValue.charAt(0);
+          const lastChar = wordArray[wordArray.length - 1].charAt(2);
+          // timeBox.innerHTML = `<span>${countDown}</span>`;
+          if (inputWordValue.length !== 3) {
+            alert("세글자만 입력하세요!");
+          } else if (firstChar === lastChar && !wordArray.includes(inputWordValue)) {
+            listCount++;
+            wordArray.push(inputWordValue);
+            wordList.innerHTML = "";
+            inputWord.value = "";
+            inputWord.focus();
+            makeWordList();
+          } else {
+            inputWord.value = "";
+            inputWord.focus();
+            gsap.from("#inputWord", { x: 50, duration: 0.5, ease: "elastic" });
+          }
+          if (listCount > 29) {
+            alert("WIN");
+          }
+        }
+      };
+      inputWord.addEventListener("keyup", keyUpFunc);
+      const wordLi = document.querySelector("#wordList ul li");
+    </script>
+  </body>
+</html>

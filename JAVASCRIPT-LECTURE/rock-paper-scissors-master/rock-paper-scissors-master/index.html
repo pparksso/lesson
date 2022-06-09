@@ -103,9 +103,9 @@
         if (count >= 3) {
           clearTimeout(allStop);
           cover.classList.add("on");
-          if (lCount >= 2) {
+          if (lCount >= 2 || (lCount === 1 && dCount === 2)) {
             resultTxt.innerHTML = `you <strong>lose<strong>`;
-          } else if (wCount >= 2) {
+          } else if (wCount >= 2 || (wCount === 1 && dCount === 2)) {
             resultTxt.innerHTML = `you <strong>win<strong>`;
           } else if (dCount >= 2) {
             resultTxt.innerHTML = `we <strong>draw<strong>`;
