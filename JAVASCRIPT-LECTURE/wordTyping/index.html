@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WORD-TYPING</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <!-- js -->
+    <script src="./js/greenSock.js/gsap.min.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <h1><strong>WORD-TYPING</strong></h1>
+    </header>
+    <div id="selectedWord">
+      <span>JavaScript</span>
+    </div>
+    <div id="inputBox">
+      <input type="text" placeholder="단어를 입력해주세요" id="inputWord" />
+    </div>
+    <div id="info"></div>
+    <div class="cover">
+      <h2 class="coverTxt"></h2>
+      <button class="resetBtn">restart</button>
+    </div>
+    <script>
+      const selectedWord = document.querySelector("#selectedWord");
+      const inputWord = document.querySelector("#inputWord");
+      const info = document.querySelector("#info");
+      const resetBtn = document.querySelector(".resetBtn");
+      const cover = document.querySelector(".cover");
+      const coverTxt = document.querySelector(".coverTxt");
+      let str =
+        "JavaScript is a lightweight, interpreted, or justintime compiled programming language with firstclass functions. While it is most wellknown as the scripting language for Web pages, many nonbrowser environments also use it, such as Node.js, Apache CouchDB and Adobe Acrobat. JavaScript is a prototypebased, multiparadigm, singlethreaded, dynamic language, supporting objectoriented, imperative, and declarative styles. Read more about JavaScript.";
+      let randomWord = "";
+      let count = 1;
+
+      const make = str.replace(/[`~!@#$%^&*()_|+\-=?;:'",.\{\}\[\]\\\/]/gi, "").toLowerCase();
+      // 문자열에서 특수기호를 없애고, 소문자로 만듬
+      const set = new Set(make.split(" "));
+      // 문자열에서 중복을 없애고, 공백을 기준으로 문자열을 분리함
+      let words = [...set].filter(function (item, index) {
+        return item.length > 5;
+      });
+      // 중복없애고 분리한 문자열을 배열로 만들어서 그 중 5글자 이상인 아이들만 남긴 배열
+      const showWord = function () {
+        randomWord = words.splice(Math.floor(Math.random() * words.length), 1).pop();
+        selectedWord.innerHTML = `<span>${randomWord}</span>`;
+      };
+      const keyupFunc = function (e) {
+        if (e.keyCode === 13) {
+          const typingWord = inputWord.value;
+          if (randomWord === typingWord) {
+            showWord();
+            resetInputWord();
+            count++;
+            info.innerHTML = `${count}/26`;
+            if (count >= 26) {
+              const endTime = new Date();
+              const mSec = endTime - startTime;
+              const minutes = Math.floor(mSec / 1000 / 60);
+              const seconds = Math.floor((mSec / 1000) % 60);
+              coverTxt.innerHTML = `<h2><strong>${minutes}</strong>분 <strong>${seconds}</strong>초 걸렸습니다!</h2>`;
+              cover.classList.add("on");
+              count = 1;
+            }
+          } else {
+            gsap.from("#inputBox", { x: 100, duration: 0.5, ease: "elastic(1,0.3)", onComplete: init });
+            resetInputWord();
+            inputWord.removeEventListener("keyup", keyupFunc);
+          }
+        }
+      };
+      const moreThans = function () {};
+      const init = function () {
+        inputWord.addEventListener("keyup", keyupFunc);
+      };
+      const resetInputWord = function () {
+        inputWord.value = "";
+        inputWord.focus();
+      };
+      info.innerHTML = `${count}/26`;
+      showWord();
+      init();
+      resetBtn.addEventListener("click", function () {
+        cover.classList.remove("on");
+        selectedWord.innerHTML = `<span>${randomWord}</span>`;
+        resetInputWord();
+        info.innerHTML = `${count}/26`;
+        startTime = new Date();
+        words = [...set].filter(function (item, index) {
+          return item.length > 5;
+        });
+      });
+      let startTime = new Date();
+    </script>
+  </body>
+</html>
